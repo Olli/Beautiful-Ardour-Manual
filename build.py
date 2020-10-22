@@ -18,7 +18,7 @@ import argparse
 import datetime
 
 # Global vars
-global_bootstrap_path = '/bootstrap-3.3.7'
+global_bootstrap_path = 'bootstrap-3.3.7'
 global_page_title = 'The Ardour Manual'
 global_site_dir = './website/'
 global_manual_url = 'http://manual.ardour.org'
@@ -713,4 +713,3 @@ if pdf:
 
 if noisy:
 	print('Processed ' + str(fileCount) + ' files.')
-
