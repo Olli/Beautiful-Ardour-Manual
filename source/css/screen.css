@@ -1,21 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --width-nav: 50ch;
+  --width-content: 100ch;
+
+}
+
+body {
+  display: grid;
+
+}
+@media(min-width: 800px) {
+  body {
+    grid-template-columns: var(--width-nav) auto;
+    grid-column-gap: 4ch;
+    grid-template-areas: "nav content";
+  }
+}
+
+
 
 .clear {
   clear:both;
 }
 
+img,
+.img-responsive {
+  object-fit: cover;
+  width: 100%;
+}
+
+.show-nav #tree {
+  transform: translateX(0%);
+  transition: transform 300ms ease-in-out;
+}
+
 #tree {
+  --width-nav: 100%;
+  position: fixed;
   background-color: #212A30;
   line-height: 1.8;
   height: 100%;
+
   overflow: scroll;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 20em;
-  padding: 1em 1em 2em 1.5em;
   overflow-x: hidden;
+
+  top: 0;
+  left: 0;
+  width: var(--width-nav);
+  padding: 1em 1em 2em 1.5em;
+  grid-area: nav;
+
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
 }
+
+@media(min-width: 800px) {
+  #tree {
+    max-height: 100vh;
+    position: sticky;
+    transform: none;
+  }
+
+
+}
+
+
 
 #tree h1 {
   font-size: 1.75em;
@@ -46,9 +98,11 @@
 }
 
 #content {
-  padding: 1em 2em 2ex 21em;
+  padding: 1rem 4ch;
   margin-left: 0;
   line-height: 1.45;
+  grid-area: content;
+  width: var(--width-content);
 
 }
 
@@ -56,32 +110,47 @@
 #content h1,
 #content h2,
 #content h3,
-#content h4 {
+#content h4,
+#content h5,
+#content h6 {
   font-weight: normal;
-  padding-bottom: .3rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-headlines);
 }
 
 #content h1 {
-  font-size: 1.8em;
-  margin: 0 0 2ex 0;
+  font-size: 4.2rem;
+  margin: 0 0 1rem;
   padding-bottom: .8rem;
   border-bottom: 2px solid #ccc;
 }
 
 #content h2 {
-  font-size: 1.3em;
-  margin: 2rem 0 1rem 0;
+  font-size: 3.1rem;
+  margin: 2rem 0 1rem;
   border-bottom: 2px solid #ddd;
 }
 
 #content h3 {
-  font-size: 1.2em;
-  margin: 1.5rem 0 1rem 0;
+  font-size: 2.3rem;
+  margin: 1.5rem 0 1rem ;
   border-bottom: 1px solid #eee;
 }
 
 #content h4 {
-  font-size: 1.1em;
+  font-size: 1.77rem;
+  margin: 1.5rem 0 .5rem 0;
+  border-bottom: 1px solid #eee;
+}
+#content h5 {
+  font-size: 1.33rem;
+  margin: 1.5rem 0 .5rem 0;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+}
+#content h6 {
+  font-size: 1rem;
+  font-weight: bold;
   margin: 1.5rem 0 .5rem 0;
   border-bottom: 1px solid #eee;
 }
@@ -170,7 +239,7 @@
   text-align: center;
 	caption-side: top;
 }
-
+/*
 #content figure.right {
   margin: 0 0 1em 1em;
   float: right;
@@ -183,10 +252,12 @@
   clear: left;
 }
 
+
 #content figure.center {
   margin: 1em auto 1em auto;
   clear: both;
 }
+*/
 
 #content img.mini {
   width: 200px;
@@ -216,18 +287,7 @@ kbd.cmd {
 	text-align:center;
 }
 
-@media (max-width: 800px) {
-  #tree {
-    position: relative;
-    height: 250px;
-    width: 100%;
-    margin-top: 20px;
-  }
-  #content {
-    padding-left: 20px;
-    margin-top: 0px;
-  }
-}
+
 
 /* for the TOC */
 #content p.chapter,

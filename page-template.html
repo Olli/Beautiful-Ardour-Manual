@@ -7,7 +7,7 @@
 	<meta name="description" content="{{page.page_title}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="{{page.bootstrap_path}}/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="{{page.bootstrap_path}}/css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="css/common.css" rel="stylesheet">
 	<link href="css/screen.css" rel="stylesheet">
 {% if page.style %}
@@ -16,8 +16,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
-		<div class="row-fluid">
+
 			<div id="tree">
 
 				<h1><a href="/"><img class="img-responsive" src="images/logo.png" alt="The Ardour Manual" /></a></h1>
@@ -49,8 +48,8 @@
 
 			</div> <!-- tree -->
 
-			<div class="span12" id="content">
-
+			<div class="content" id="content">
+				
 				{% breadcrumbs %}
 				{% githubedit %}
 
@@ -58,13 +57,11 @@
 
 				{{ content }}
 
-				<div class="clear"></div>
 
 				{% prevnext %}
 
 			</div> <!-- content -->
-		</div> <!-- row-fluid -->
-	</div> <!-- container-fluid -->
+
 
 
 	<script type="text/javascript">

@@ -7,15 +7,14 @@
 	<meta name="description" content="{{page.page_title}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href="{{page.bootstrap_path}}/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="{{page.bootstrap_path}}/css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="css/common.css" rel="stylesheet">
 	<link href="css/screen.css" rel="stylesheet">
 
 </head>
 
 <body>
-	<div class="container-fluid">
-		<div class="row-fluid">
+			<button id="navtrigger">Navigation</button>
 			<div id="tree" class="navbar">
 				<h1><a href="/"><img class="img-responsive" src="images/logo.png" alt="The Ardour Manual" /></a></h1>
 
@@ -23,13 +22,11 @@
 
 			</div> <!-- tree -->
 
-			<div class="span12" id="content">
+			<div class="content" id="content">
 
 				{{ content }}
 
 			</div> <!-- content -->
-		</div> <!-- row-fluid -->
-	</div> <!-- container-fluid -->
 
 
 	<script type="text/javascript">
@@ -41,6 +38,10 @@
 			var e = document.getElementsByTagName('body')[0];
 			e.className += ' mac';  // class magic for Cmd vs. Ctrl keys.
 		}
+
+		document.getElementById("navtrigger").addEventListener("click",funtion(event){
+			body.classList.toggle("show-nav");
+		});
 	</script>
 
 </body>
