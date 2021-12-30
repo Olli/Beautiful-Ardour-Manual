@@ -76,7 +76,6 @@ kbd {
   /* padding: .2em .3em; */
   padding: 0.5rem 2ch;
   font: normal .8em/1 sans-serif;
-  text-align: center;
   text-decoration: none;
   border-radius: 0;
   /* border-radius: .3em;
@@ -93,21 +92,21 @@ kbd {
 }
 
 kbd.def {
-  font-weight:bolder;
-	margin-right:.2em;
+  font-weight: bolder;
+  margin-right: .2em;
 }
 
 kbd.input,
 kbd.cmd,
 kbd.osc {
-  font-family:mono;
-  border-width:0;
-  text-transform:none;
+  font-family: mono;
+  border-width: 0;
+  text-transform: none;
 }
 
 kbd.input {
-  background:none;
-  border-radius: 0;
+  background: none;
+  border-radius: unset;
 }
 
 kbd.cmd {
@@ -116,34 +115,34 @@ kbd.cmd {
   margin-bottom:1rem;
   text-transform:none;
   background: rgb(220, 220, 220);
-  text-align:left;
+  text-align: left;
+  color: #999999;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 kbd.cmd.lin:before {
   content: 'user@linux:~ ';
-  color:#999999;
 }
 
 kbd.cmd.mac:before {
   content: 'MacBook:~/Desktop User\$ ';
-  color:#999999;
 }
 
 kbd.cmd.win:before {
   content: 'C:\\Users\\myAccount> ';
-  color:#999999;
 }
 
-kbd.optoff,
-kbd.option {
-  border:none;
-  background:none;
+kbd.menu,
+kbd.option,
+kbd.optoff {
+  border-radius: unset;
+  background: rgb(240, 240, 240);
+  box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4);
 }
 
 kbd.optoff:before {
-  content:url('/images/checkbox-unchecked.png');
-  margin: 0 1em 0 0;
-  vertical-align:middle;
+  content: '\2610\00a0';
 }
 
 kbd.option:before {
@@ -161,11 +160,11 @@ kbd.menu {
 }
 
 kbd.osc {
-  border:none;
+  border: none;
   background: rgb(208, 208, 243);
-  font-stretch:extra-condensed;
+  font-stretch: extra-condensed;
   white-space: nowrap;
-  text-align:left;
+  text-align: left;
 }
 
 kbd.fader,
@@ -193,13 +192,13 @@ kbd.button {
 }
 
 kbd.mouse {
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 samp {
-  font-family:mono;
-  color:#666666;
-  background-color:#EBEBEB;
+  font-family: mono;
+  color: #666666;
+  background-color: #EBEBEB;
   margin-left: .5em;
   margin-right: .5em;
 }
@@ -235,17 +234,8 @@ code {
 }
 
 .fixme {
-  border-color: #999944;
-  background-color: #f0f0e0;
-  font-weight:bold;
+  display: none;
 }
-
-.fixme:before {
-  content:'FIXME: ';
-  font-style: italic;
-  font-size:2em;
-}
-
 
 /* Keyboard modifiers */
 .mod1:before {        content: "Ctrl ";}
@@ -256,6 +246,7 @@ code {
 .mod13:before {       content: "Ctrl Shift ";}
 .mod14:before {       content: "Ctrl Win ";}
 .mod23:before {       content: "Alt Shift ";}
+.mod123:before {      content: "Ctrl Alt Shift ";}
 .kp:before {          content: "Keypad ";}
 /* Variants *without* space after them (yes, these are needed!) */
 .mod1n:before {       content: "Ctrl";}
@@ -266,6 +257,7 @@ code {
 .mod13n:before {      content: "Ctrl Shift";}
 .mod14n:before {      content: "Ctrl Win";}
 .mod23n:before {      content: "Alt Shift";}
+.mod123n:before {     content: "Ctrl Alt Shift";}
 /* Automagic translation for Mac based display */
 .mac .mod1:before {   content: "Cmd ";}
 .mac .mod2:before {   content: "Ctrl ";}
@@ -275,6 +267,7 @@ code {
 .mac .mod13:before {  content: "Cmd Shift ";}
 .mac .mod14:before {  content: "Cmd Opt ";}
 .mac .mod23:before {  content: "Ctrl Shift ";}
+.mac .mod123:before { content: "Cmd Ctrl Shift ";}
 /* No space variants (Mac based) */
 .mac .mod1n:before {  content: "Cmd";}
 .mac .mod2n:before {  content: "Ctrl";}
@@ -284,7 +277,4 @@ code {
 .mac .mod13n:before { content: "Cmd Shift";}
 .mac .mod14n:before { content: "Cmd Opt";}
 .mac .mod23n:before { content: "Ctrl Shift";}
-
-/* for images sliced in divs, as in http://manual.ardour.org/ardours-interface/about/ */
-.container { position: relative; border: none; }
-.hoverimg { position: absolute; border: none; }
+.mac .mod123n:before {content: "Cmd Ctrl Shift";}

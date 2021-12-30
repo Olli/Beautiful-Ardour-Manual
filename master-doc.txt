@@ -124,8 +124,8 @@ part: subchapter
 ---
 
 ---
-title: Mnemonic Bindings for Linux
-menu_title: Linux Bindings
+title: Mnemonic Bindings for Linux &amp; Windows
+menu_title: Linux &amp; Windows Bindings
 include: mnemonic-bindings-for-linux.html
 link: mnemonic-bindings-for-linux
 uri: default-keyboard-bindings/mnemonic-bindings-for-linux
@@ -133,8 +133,8 @@ part: subchapter
 ---
 
 ---
-title: Mnemonic Bindings for OS X
-menu_title: OS X Bindings
+title: Mnemonic Bindings for macOS
+menu_title: macOS Bindings
 include: mnemonic-bindings-for-os-x.html
 link: mnemonic-bindings-for-os-x
 uri: default-keyboard-bindings/mnemonic-bindings-for-os-x
@@ -714,6 +714,13 @@ part: subchapter
 ---
 
 ---
+title: Audio/MIDI Setup
+include: audio-midi-setup.html
+link: audio-midi-setup
+part: subchapter
+---
+
+---
 title: Renaming a Session
 include: renaming-a-session.html
 link: renaming-a-session
@@ -848,15 +855,9 @@ part: subchapter
 ---
 
 ---
-title: Playback & Recording
-uri: recording
+title: Playback
+uri: playback
 part: part
----
-
----
-title: Playing Back Track Material
-link: playing-back-track-material
-part: chapter
 ---
 
 ---
@@ -864,19 +865,28 @@ title: Controlling Playback
 include: controlling-playback.html
 link: controlling-playback
 uri: controlling-playback
-part: subchapter
+part: chapter
 ---
 
 ---
 title: Using Key Bindings
 include: using-key-bindings.html
 link: using-key-bindings
-part: subchapter
+part: chapter
 ---
 
+
 ---
-title: Audio Recording
-link: audio-recording
+title: Recording
+uri: recording
+part: part
+---
+
+
+---
+title: The Recorder
+include: recorder.html
+link: recorder
 part: chapter
 ---
 
@@ -885,16 +895,16 @@ title: Monitoring
 include: monitoring.html
 link: monitoring
 uri: recording/monitoring
-part: subchapter
+part: chapter
 ---
 
 ---
 title: Latency Considerations
-menu_title: Latency
+menu_title: Latency Considerations
 include: latency-considerations.html
 link: latency-considerations
 uri: recording/monitoring/latency-considerations
-part: subchapter
+part: chapter
 ---
 
 ---
@@ -903,7 +913,7 @@ menu_title: Signal Flow
 include: monitor-signal-flow.html
 link: monitor-signal-flow
 uri: recording/monitoring/monitor-signal-flow
-part: subchapter
+part: chapter
 ---
 
 ---
@@ -1431,6 +1441,13 @@ part: subchapter
 ---
 
 ---
+title: The Virtual MIDI Keyboard
+include: virtual-keyboard.html
+link: virtual-keyboard
+part: subchapter
+---
+
+---
 title: MIDI Automation
 include: midi-automation.html
 link: midi-automation
@@ -1628,6 +1645,13 @@ part: section
 ---
 
 ---
+title: Loudness Analyzer & Normalizer
+include: loudness-analyzer.html
+link: loudness-analyzer
+part: subchapter
+---
+
+---
 title: Plugin and Hardware Inserts
 link: plugin-and-hardware-inserts
 part: chapter
@@ -1650,9 +1674,9 @@ part: subchapter
 ---
 
 ---
-title: Plugin Manager
+title: Plugin Selector
 include: plugin-manager.html
-link: plugin-manager
+link: plugin-selector
 uri: working-with-plugins/plugin-manager
 part: subchapter
 ---
@@ -1794,6 +1818,7 @@ part: part
 ---
 title: Controlling Ardour with OSC
 include: controlling-ardour-with-osc.html
+pdf-exclude: yes
 link: controlling-ardour-with-osc
 uri: using-control-surfaces/controlling-ardour-with-osc
 part: chapter
