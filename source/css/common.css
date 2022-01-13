@@ -49,18 +49,17 @@ table {
 
 
 
-/*
+
 @font-face {
-    font-family: 'junge-regular';
-    src: url('junge-regular-webfont.woff') format('woff'),
-         url('junge-regular-webfont.ttf')  format('truetype');
+    font-family: 'AbletonSans';
+    src: url('AbletonSans-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-} */
+} 
 
 :root {
-    /* --font-primary: "HelveticaNeue","Roboto",sans-serif; */
-    --font-primary: "Source Sans Pro", Arial;
+    /* --font-primary: "AbletonSans","Source Sans Pro", Arial; */
+    --font-primary: "Noto Sans", Arial, Sans-Serif;
     --font-headlines: var(--font-primary);
 }
 
@@ -74,7 +73,7 @@ kbd {
   display: inline-block;
   min-width: 1em;
   /* padding: .2em .3em; */
-  padding: 0.5rem 2ch;
+  padding: 0.25rem 2ch;
   font: normal .8em/1 sans-serif;
   text-decoration: none;
   border-radius: 0;

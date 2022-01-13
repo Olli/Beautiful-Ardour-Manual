@@ -29,7 +29,8 @@ body {
 img,
 .img-responsive {
   object-fit: cover;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
 .show-nav #tree {
@@ -84,12 +85,11 @@ img,
   font-size: 0.88em;
   line-height: 2em;
   color: #E4E4E4;
-  border-bottom: 1px solid transparent;
+  text-decoration-color: hsl(0, 0%, 66.7%,0.0)
 }
 
 #tree a:hover {
-  text-decoration: none;
-  border-bottom: 1px solid #aaa;
+  text-decoration-color: hsl(0, 0%, 66.7%,1.0);
 }
 
 #tree .active > a {
@@ -220,11 +220,17 @@ img,
 }
 
 #content figure {
-  display: table;
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  column-gap: 2ch;
+  row-gap: 2ch;
 }
 
 #content figcaption {
-  display: table-caption;
+  display: block;
+  flex-basis: 100%;
   caption-side: bottom;
   font-style: italic;
   padding-top: 0.4em;
