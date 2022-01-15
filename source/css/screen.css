@@ -3,21 +3,82 @@
 }
 
 :root {
+
+  --color-default: hsla(0, 0%, 14%, 1);
+  --color-link-default: hsl(0, 67.3%, 44.3%);
+
   --width-nav: 50ch;
   --width-content: 100ch;
 
+
+
+  --btn-fg-color: var(--color-default);
+  --btn-bg-color: hsla(0, 0%, 83%, 1);
+  --btn-border-radius: 4px;
+  --btn-border: 1px solid hsl(0, 4.2%, 76.7%);
+
+  --btn-box-shadow: 0.4px 0px 2.2px rgba(0, 0, 0, 0.02),
+                    1.1px 0px 5.3px rgba(0, 0, 0, 0.028),
+                    2px 0px 10px rgba(0, 0, 0, 0.035),
+                    3.6px 0px 17.9px rgba(0, 0, 0, 0.042),
+                    6.7px 0px 33.4px rgba(0, 0, 0, 0.05),
+                    16px 0px 80px rgba(0, 0, 0, 0.07);
+
+
 }
+
+
 
 body {
   display: grid;
-
+  color: var(--color-default);
 }
 @media(min-width: 800px) {
   body {
     grid-template-columns: var(--width-nav) auto;
     grid-column-gap: 4ch;
     grid-template-areas: "nav content";
+    height: 100vh;
   }
+}
+
+
+a {
+  color: var(--color-link-default);
+}
+
+.pager {
+  padding: 2rem 0;
+  display: flex;
+  column-gap: 4ch;
+  justify-content: center;
+}
+
+.pager a {
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  padding: 0.75rem 4ch;
+  text-decoration: none;
+  font-weight: bold;
+
+  background-color: var(--btn-bg-color);
+  color: var(--btn-fg-color);
+  border-radius: var(--btn-border-radius);
+  box-shadow: var(--btn-box-shadow);
+  border: var(--btn-border);
+}
+
+.breadcrumb {
+  display: flex;
+  column-gap: 1ch;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  font-size: 0.8rem;
+}
+.breadcrumb > li:not(:last-child)::after {
+  content: " » ";
+  display: inline;
 }
 
 
@@ -83,7 +144,7 @@ img,
 
 #tree a {
   font-size: 0.88em;
-  line-height: 2em;
+  line-height: 1.7;
   color: #E4E4E4;
   text-decoration-color: hsl(0, 0%, 66.7%,0.0)
 }
@@ -116,6 +177,8 @@ img,
   font-weight: normal;
   padding-bottom: 0.25rem;
   font-family: var(--font-headlines);
+  line-height: 1.1;
+  font-weight: lighter;
 }
 
 #content h1 {
@@ -204,13 +267,13 @@ img,
 #content table.dl th {
   /* dl class (definition list) is for 2-columns tables that describe properties:
   maximmizes the width of the 2nd (description) column */
-  vertical-align: top;
+  vertical-align: middle;
   min-width: 20%;
   white-space:nowrap
 }
 
 #content table.dl td {
-  vertical-align: top;
+  vertical-align: middle;
   width: 100%;
 }
 
@@ -236,7 +299,7 @@ img,
   padding-top: 0.4em;
   padding-bottom: 1em;
   font-size: .9em;
-  line-height: .9em;
+  line-height: 1;
 }
 
 #content figcaption.center {
@@ -247,25 +310,7 @@ img,
   text-align: center;
   caption-side: top;
 }
-/*
-#content figure.right {
-  margin: 0 0 1em 1em;
-  float: right;
-  clear: right;
-}
 
-#content figure.left {
-  margin: 0 1em 1em 0;
-  float: left;
-  clear: left;
-}
-
-
-#content figure.center {
-  margin: 1em auto 1em auto;
-  clear: both;
-}
-*/
 
 #content img.mini {
   width: 200px;
@@ -302,9 +347,9 @@ kbd.cmd {
 #content p.subchapter,
 #content p.section,
 #content p.subsection {
-  line-height:1em;
+  line-height: 1.9;
 }
 #content p.chapter { padding-top: 1em; padding-left: 1em; padding-bottom:1em; }
-#content p.subchapter { padding-left: 4em; }
+#content p.subchapter { padding-left: 12ch; }
 #content p.section { padding-left: 6em; }
 #content p.subsection { padding-left: 8em; }

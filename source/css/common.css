@@ -51,29 +51,49 @@ table {
 
 
 @font-face {
-    font-family: 'AbletonSans';
-    src: url('AbletonSans-Light.ttf') format('truetype');
+    font-family: 'NotoSans';
+    src: url('fonts/noto-sans/NotoSans-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-} 
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('fonts/noto-sans/NotoSans-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('fonts/noto-sans/NotoSans-Bold.woff2') format('woff2');
+		font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('fonts/noto-sans/NotoSans-Light.woff2') format('woff2');
+    font-weight: light;
+    font-style: normal;
+}
 
 :root {
-    /* --font-primary: "AbletonSans","Source Sans Pro", Arial; */
-    --font-primary: "Noto Sans", Arial, Sans-Serif;
+    --font-primary: "NotoSans", Arial, Sans-Serif;
     --font-headlines: var(--font-primary);
 }
 
 body {
   font-family: var(--font-primary);
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 kbd {
   display: inline-block;
   min-width: 1em;
   /* padding: .2em .3em; */
-  padding: 0.25rem 2ch;
+  padding: 0.75rem 2ch;
   font: normal .8em/1 sans-serif;
   text-decoration: none;
   border-radius: 0;
@@ -82,12 +102,13 @@ kbd {
   background: rgb(250, 250, 250);
   background: linear-gradient(to top, rgb(210, 210, 210), rgb(255, 255, 255)); */
   background: rgb(232, 232, 232);
-  color:  rgb(50, 50, 50);
+  color:  rgb(20, 20, 20);
   white-space:nowrap;
   text-transform:capitalize;
   box-shadow: none;
   text-shadow: none;
   border: 1px dotted rgb(232, 232, 232);
+	margin: 0.5rem 0;
 }
 
 kbd.def {
@@ -115,7 +136,7 @@ kbd.cmd {
   text-transform:none;
   background: rgb(220, 220, 220);
   text-align: left;
-  color: #999999;
+  color: #363636;
   text-shadow: none;
   box-shadow: none;
 }
@@ -214,7 +235,7 @@ samp {
   padding: 1em;
   margin-bottom: 1em;
   border-style: solid;
-  border-width: 1px 1px 1px 8px;
+  border-width: 1px 1px 1px 10ch;
 }
 
 code {
@@ -228,8 +249,27 @@ code {
 }
 
 .warning {
-  border-color: #995555;
+
+	--warning-sign-color: #f5f5f5;
+
+	border-color: #995555;
   background-color: #ffeeee;
+	position: relative;
+}
+.warning::before {
+
+	display: flex;
+	content: "!";
+	font-size: 5rem;
+	position: absolute;
+	height: 100%;
+	width: 2ch;
+	color: var(--warning-sign-color);
+	left: 0;
+	top: 0;
+	transform: translateX(-100%);
+	font-weight: bold;
+	justify-content: center;
 }
 
 .fixme {
