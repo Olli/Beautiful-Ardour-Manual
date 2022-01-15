@@ -560,15 +560,15 @@ for header in fileStruct:
 	uLink = ''
 
 	if pageNumber > 0:
-		pLink = '<li class="previous"><a title="' + fileStruct[pageNumber - 1]['title'] + '" href="/' + fileStruct[pageNumber - 1]['filename'] + '/" class="previous"> &larr; Previous </a></li>'
+		pLink = '<li class="previous"><a class="btn" title="' + fileStruct[pageNumber - 1]['title'] + '" href="/' + fileStruct[pageNumber - 1]['filename'] + '/" class="previous"> &larr; Previous </a></li>'
 
 	if pageNumber < len(fileStruct) - 1:
-		nLink = '<li class="next"><a title="' + fileStruct[pageNumber + 1]['title'] + '" href="/' + fileStruct[pageNumber + 1]['filename'] + '/" class="next"> Next &rarr; </a></li>'
+		nLink = '<li class="next"><a class="btn" title="' + fileStruct[pageNumber + 1]['title'] + '" href="/' + fileStruct[pageNumber + 1]['filename'] + '/" class="next"> Next &rarr; </a></li>'
 
 	if level > 0:
-		uLink = '<li><a title="' + fileStruct[parent]['title'] + '" href="/' + fileStruct[parent]['filename'] + '/" class="active"> &uarr; Up </a></li>'
+		uLink = '<li><a class="btn" title="' + fileStruct[parent]['title'] + '" href="/' + fileStruct[parent]['filename'] + '/" class="active"> &uarr; Up </a></li>'
 	else:
-		uLink = '<li><a title="Ardour Table of Contents" href="/toc/index.html" class="active"> &uarr; Up </a></li>'
+		uLink = '<li><a  class="btn" title="Ardour Table of Contents" href="/toc/index.html" class="active"> &uarr; Up </a></li>'
 
 	prevnext = '<ul class="pager">' + pLink + uLink + nLink + '</ul>'
 
@@ -714,7 +714,7 @@ if pdf:
 	# Generating the actual PDF with weasyprint (https://weasyprint.org/)
 	from weasyprint import HTML
 	from weasyprint.fonts import FontConfiguration
-	
+
 	html_font_config = FontConfiguration()
 	doc = HTML(string = pdfpage, base_url = global_site_dir)
 	doc.write_pdf(global_site_dir + 'manual.pdf', font_config = html_font_config)
