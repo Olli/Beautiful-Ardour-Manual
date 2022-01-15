@@ -35,9 +35,15 @@ body {
 }
 @media(min-width: 800px) {
   body {
-    grid-template-columns: var(--width-nav) auto;
+    grid-template-columns: var(--width-nav) 1fr;
+    grid-template-rows: 4rem
+                        1fr
+                        6rem;
     grid-column-gap: 4ch;
-    grid-template-areas: "nav content";
+    grid-template-areas: "nav bread-place"
+                         "nav content"
+                         "nav pager-place";
+
     height: 100vh;
   }
 }
@@ -52,6 +58,7 @@ a {
   display: flex;
   column-gap: 4ch;
   justify-content: center;
+  list-style-type: none;
 }
 
 .pager a {
@@ -73,8 +80,8 @@ a {
   display: flex;
   column-gap: 1ch;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
   font-size: 0.8rem;
+  list-style-type: none;
 }
 .breadcrumb > li:not(:last-child)::after {
   content: " » ";
@@ -98,6 +105,20 @@ img,
   transform: translateX(0%);
   transition: transform 300ms ease-in-out;
 }
+
+#bread-place {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 1px solid hsl(0, 0%, 87%)
+}
+
+#pager-place {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid hsl(0, 0%, 87%)
+}
+
 
 #tree {
   --width-nav: 100%;
@@ -163,19 +184,14 @@ img,
   margin-left: 0;
   line-height: 1.45;
   grid-area: content;
-  width: var(--width-content);
+  overflow-y: scroll;
 
 }
 
 
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
+#content :is(h1,h2,h3,h4,h5,h6) {
   font-weight: normal;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.75rem;
   font-family: var(--font-headlines);
   line-height: 1.1;
   font-weight: lighter;
@@ -190,13 +206,13 @@ img,
 
 #content h2 {
   font-size: 3.1rem;
-  margin: 2rem 0 1rem;
+  margin: 4rem 0 1rem;
   border-bottom: 2px solid #ddd;
 }
 
 #content h3 {
   font-size: 2.3rem;
-  margin: 1.5rem 0 1rem ;
+  margin: 2.5rem 0 1rem ;
   border-bottom: 1px solid #eee;
 }
 
@@ -279,8 +295,18 @@ img,
 
 #content ul,
 #content ol {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
+  padding-left: 4ch;
 }
+#content ul {
+  list-style-type: disc;
+}
+#content ol {
+  list-style-type: decimal;
+}
+
 
 #content figure {
   display: flex;
@@ -334,6 +360,11 @@ kbd {
 kbd.cmd {
   text-shadow: none;
   box-shadow: none;
+}
+
+#content p {
+  /* since its much text let it be readable */
+  max-width: 70ch;
 }
 
 #content p.center {

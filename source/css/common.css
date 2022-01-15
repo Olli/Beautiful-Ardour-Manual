@@ -231,11 +231,33 @@ samp {
 .note,
 .warning,
 .fixme {
+
+	--before-box-sign-width: 80px;
+
   min-height: 1.5rem;
   padding: 1em;
   margin-bottom: 1em;
   border-style: solid;
-  border-width: 1px 1px 1px 10ch;
+  border-width: 1px 1px 1px var(--before-box-sign-width);
+	position: relative;
+
+}
+
+:is(.note,.warning,.fixme)::before {
+
+		display: flex;
+		content: var(--before-box-sign);
+		font-size: 4rem;
+		position: absolute;
+		height: 100%;
+		width: var(--before-box-sign-width);
+		left: 0;
+		top: 0;
+		transform: translateX(-100%);
+		font-weight: bold;
+		justify-content: center;
+		color: var(--before-box-sign-color);
+		align-items: center;
 }
 
 code {
@@ -244,33 +266,22 @@ code {
 }
 
 .note {
+	--before-box-sign-color: var(--color-default);
+	--before-box-sign: "🗨";
   border-color: #e3e3e3;
   background-color: #f5f5f5;
 }
 
 .warning {
 
-	--warning-sign-color: #f5f5f5;
+	--before-box-sign-color: #f5f5f5;
+	--before-box-sign: "!";
 
 	border-color: #995555;
   background-color: #ffeeee;
-	position: relative;
-}
-.warning::before {
 
-	display: flex;
-	content: "!";
-	font-size: 5rem;
-	position: absolute;
-	height: 100%;
-	width: 2ch;
-	color: var(--warning-sign-color);
-	left: 0;
-	top: 0;
-	transform: translateX(-100%);
-	font-weight: bold;
-	justify-content: center;
 }
+
 
 .fixme {
   display: none;
