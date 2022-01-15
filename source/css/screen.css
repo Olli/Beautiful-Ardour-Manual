@@ -53,15 +53,8 @@ a {
   color: var(--color-link-default);
 }
 
-.pager {
-  padding: 2rem 0;
-  display: flex;
-  column-gap: 4ch;
-  justify-content: center;
-  list-style-type: none;
-}
 
-.pager a {
+.btn {
   display: flex;
   height: 2rem;
   align-items: center;
@@ -75,6 +68,16 @@ a {
   box-shadow: var(--btn-box-shadow);
   border: var(--btn-border);
 }
+
+.pager {
+  padding: 2rem 0;
+  display: flex;
+  column-gap: 4ch;
+  justify-content: center;
+  list-style-type: none;
+}
+
+
 
 .breadcrumb {
   display: flex;
@@ -92,6 +95,11 @@ a {
 
 .clear {
   clear:both;
+}
+
+.input-group {
+  display: flex;
+  column-gap: 1ch;
 }
 
 img,
@@ -150,7 +158,9 @@ img,
 
 }
 
-
+#tree form {
+  margin-bottom: 2rem;
+}
 
 #tree h1 {
   font-size: 1.75em;
@@ -159,8 +169,11 @@ img,
 }
 
 #tree ul {
-  padding-left: 1em;
   list-style-type: none;
+}
+
+#tree ul > ul {
+  margin-left: 2ch;
 }
 
 #tree a {
@@ -365,6 +378,7 @@ kbd.cmd {
 #content p {
   /* since its much text let it be readable */
   max-width: 70ch;
+  margin-bottom: 1rem;
 }
 
 #content p.center {
