@@ -32,6 +32,8 @@
 body {
   display: grid;
   color: var(--color-default);
+  scroll-behavior: smooth;
+
 }
 @media(min-width: 800px) {
   body {
@@ -51,6 +53,10 @@ body {
 
 a {
   color: var(--color-link-default);
+}
+
+pre {
+  font-family: var(--font-mono);
 }
 
 

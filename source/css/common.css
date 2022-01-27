@@ -66,6 +66,13 @@ table {
 
 @font-face {
     font-family: 'NotoSans';
+    src: url('fonts/noto-sans/NotoSans-Medium.woff2') format('woff2');
+		font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'NotoSans';
     src: url('fonts/noto-sans/NotoSans-Bold.woff2') format('woff2');
 		font-style: normal;
     font-weight: bold;
@@ -78,8 +85,17 @@ table {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'NotoMono';
+    src: url('fonts/noto-mono/NotoSansMono-Bold.woff2') format('woff2');
+    font-weight: light;
+    font-style: normal;
+}
+
+
 :root {
     --font-primary: "NotoSans", Arial, Sans-Serif;
+		--font-mono: "NotoMono", monospace;
     --font-headlines: var(--font-primary);
 }
 
