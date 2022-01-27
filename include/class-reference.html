@@ -4,7 +4,7 @@ This documentation is far from complete may be inaccurate and subject to change.
 </p>
 
 
-<div id="luaref">
+<div class="luaref">
 
 
 <h2 id="h_intro">Overview</h2>
@@ -118,6 +118,966 @@ From the Lua side of things there is no distinction between weak and shared poin
 Below they're indicated in orange and have an arrow to indicate the pointer type.
 Pointer Classes cannot be created in Lua scripts. It always requires a call to C++ to create the Object and obtain a reference to it.
 </p>
+
+
+
+<h2 id="h_enum">Enum/Constants</h2>
+<h3 id="PBD.Controllable.GroupControlDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;PBD.Controllable.GroupControlDisposition</h3>
+<ul class="enum">
+<li class="const">PBD.GroupControlDisposition.InverseGroup</li>
+<li class="const">PBD.GroupControlDisposition.NoGroup</li>
+<li class="const">PBD.GroupControlDisposition.UseGroup</li>
+</ul>
+<h3 id="Timecode.TimecodeFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Timecode.TimecodeFormat</h3>
+<ul class="enum">
+<li class="const">Timecode.TimecodeFormat.TC23976</li>
+<li class="const">Timecode.TimecodeFormat.TC24</li>
+<li class="const">Timecode.TimecodeFormat.TC24976</li>
+<li class="const">Timecode.TimecodeFormat.TC25</li>
+<li class="const">Timecode.TimecodeFormat.TC2997</li>
+<li class="const">Timecode.TimecodeFormat.TC2997DF</li>
+<li class="const">Timecode.TimecodeFormat.TC2997000</li>
+<li class="const">Timecode.TimecodeFormat.TC2997000DF</li>
+<li class="const">Timecode.TimecodeFormat.TC30</li>
+<li class="const">Timecode.TimecodeFormat.TC5994</li>
+<li class="const">Timecode.TimecodeFormat.TC60</li>
+</ul>
+<h3 id="Evoral.ControlList.InterpolationStyle" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Evoral.ControlList.InterpolationStyle</h3>
+<ul class="enum">
+<li class="const">Evoral.InterpolationStyle.Discrete</li>
+<li class="const">Evoral.InterpolationStyle.Linear</li>
+<li class="const">Evoral.InterpolationStyle.Curved</li>
+</ul>
+<h3 id="Evoral.EventType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Evoral.EventType</h3>
+<ul class="enum">
+<li class="const">Evoral.EventType.NO_EVENT</li>
+<li class="const">Evoral.EventType.MIDI_EVENT</li>
+<li class="const">Evoral.EventType.LIVE_MIDI_EVENT</li>
+</ul>
+<h3 id="Vamp.Plugin.InputDomain" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Vamp.Plugin.InputDomain</h3>
+<ul class="enum">
+<li class="const">Vamp.Plugin.InputDomain.TimeDomain</li>
+<li class="const">Vamp.Plugin.InputDomain.FrequencyDomain</li>
+</ul>
+<h3 id="Vamp.Plugin.OutputDescriptor.SampleType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Vamp.Plugin.OutputDescriptor.SampleType</h3>
+<ul class="enum">
+<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.OneSamplePerStep</li>
+<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.FixedSampleRate</li>
+<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.VariableSampleRate</li>
+</ul>
+<h3 id="ARDOUR" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR</h3>
+<ul class="enum">
+<li class="const">ARDOUR.revision</li>
+</ul>
+<h3 id="ARDOUR.ChanMapping" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ChanMapping</h3>
+<ul class="enum">
+<li class="const">ARDOUR.ChanMapping.Invalid</li>
+</ul>
+<h3 id="PBD.PropertyDescriptor&lt;long&gt;*" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;PBD.PropertyDescriptor&lt;long&gt;*</h3>
+<ul class="enum">
+<li class="const">ARDOUR.Properties.Start</li>
+<li class="const">ARDOUR.Properties.Length</li>
+<li class="const">ARDOUR.Properties.Position</li>
+</ul>
+<h3 id="ARDOUR.PresentationInfo" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PresentationInfo</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PresentationInfo.max_order</li>
+</ul>
+<h3 id="ARDOUR.PluginType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PluginType</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PluginType.AudioUnit</li>
+<li class="const">ARDOUR.PluginType.LADSPA</li>
+<li class="const">ARDOUR.PluginType.LV2</li>
+<li class="const">ARDOUR.PluginType.Windows_VST</li>
+<li class="const">ARDOUR.PluginType.LXVST</li>
+<li class="const">ARDOUR.PluginType.MacVST</li>
+<li class="const">ARDOUR.PluginType.Lua</li>
+<li class="const">ARDOUR.PluginType.VST3</li>
+</ul>
+<h3 id="ARDOUR.PresentationInfo.Flag" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PresentationInfo.Flag</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PresentationInfo.Flag.AudioTrack</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.MidiTrack</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.AudioBus</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.MidiBus</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.VCA</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.MasterOut</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.MonitorOut</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.Auditioner</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.Hidden</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.GroupOrderSet</li>
+<li class="const">ARDOUR.PresentationInfo.Flag.StatusMask</li>
+</ul>
+<h3 id="ARDOUR.AutoState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoState</h3>
+<ul class="enum">
+<li class="const">ARDOUR.AutoState.Off</li>
+<li class="const">ARDOUR.AutoState.Write</li>
+<li class="const">ARDOUR.AutoState.Touch</li>
+<li class="const">ARDOUR.AutoState.Play</li>
+<li class="const">ARDOUR.AutoState.Latch</li>
+</ul>
+<h3 id="ARDOUR.AutomationType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutomationType</h3>
+<ul class="enum">
+<li class="const">ARDOUR.AutomationType.GainAutomation</li>
+<li class="const">ARDOUR.AutomationType.BusSendLevel</li>
+<li class="const">ARDOUR.AutomationType.PluginAutomation</li>
+<li class="const">ARDOUR.AutomationType.SoloAutomation</li>
+<li class="const">ARDOUR.AutomationType.SoloIsolateAutomation</li>
+<li class="const">ARDOUR.AutomationType.SoloSafeAutomation</li>
+<li class="const">ARDOUR.AutomationType.MuteAutomation</li>
+<li class="const">ARDOUR.AutomationType.RecEnableAutomation</li>
+<li class="const">ARDOUR.AutomationType.RecSafeAutomation</li>
+<li class="const">ARDOUR.AutomationType.TrimAutomation</li>
+<li class="const">ARDOUR.AutomationType.PhaseAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiCCAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiPgmChangeAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiPitchBenderAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiChannelPressureAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiNotePressureAutomation</li>
+<li class="const">ARDOUR.AutomationType.MidiSystemExclusiveAutomation</li>
+</ul>
+<h3 id="ARDOUR.SrcQuality" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SrcQuality</h3>
+<ul class="enum">
+<li class="const">ARDOUR.SrcQuality.SrcBest</li>
+</ul>
+<h3 id="ARDOUR.MeterType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterType</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MeterType.MeterMaxSignal</li>
+<li class="const">ARDOUR.MeterType.MeterMaxPeak</li>
+<li class="const">ARDOUR.MeterType.MeterPeak</li>
+<li class="const">ARDOUR.MeterType.MeterKrms</li>
+<li class="const">ARDOUR.MeterType.MeterK20</li>
+<li class="const">ARDOUR.MeterType.MeterK14</li>
+<li class="const">ARDOUR.MeterType.MeterIEC1DIN</li>
+<li class="const">ARDOUR.MeterType.MeterIEC1NOR</li>
+<li class="const">ARDOUR.MeterType.MeterIEC2BBC</li>
+<li class="const">ARDOUR.MeterType.MeterIEC2EBU</li>
+<li class="const">ARDOUR.MeterType.MeterVU</li>
+<li class="const">ARDOUR.MeterType.MeterK12</li>
+<li class="const">ARDOUR.MeterType.MeterPeak0dB</li>
+<li class="const">ARDOUR.MeterType.MeterMCP</li>
+</ul>
+<h3 id="ARDOUR.MeterPoint" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterPoint</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MeterPoint.MeterInput</li>
+<li class="const">ARDOUR.MeterPoint.MeterPreFader</li>
+<li class="const">ARDOUR.MeterPoint.MeterPostFader</li>
+<li class="const">ARDOUR.MeterPoint.MeterOutput</li>
+<li class="const">ARDOUR.MeterPoint.MeterCustom</li>
+</ul>
+<h3 id="ARDOUR.Placement" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Placement</h3>
+<ul class="enum">
+<li class="const">ARDOUR.Placement.PreFader</li>
+<li class="const">ARDOUR.Placement.PostFader</li>
+</ul>
+<h3 id="ARDOUR.MonitorChoice" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorChoice</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MonitorChoice.MonitorAuto</li>
+<li class="const">ARDOUR.MonitorChoice.MonitorInput</li>
+<li class="const">ARDOUR.MonitorChoice.MonitorDisk</li>
+<li class="const">ARDOUR.MonitorChoice.MonitorCue</li>
+</ul>
+<h3 id="ARDOUR.MonitorState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorState</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MonitorState.MonitoringSilence</li>
+<li class="const">ARDOUR.MonitorState.MonitoringInput</li>
+<li class="const">ARDOUR.MonitorState.MonitoringDisk</li>
+<li class="const">ARDOUR.MonitorState.MonitoringCue</li>
+</ul>
+<h3 id="ARDOUR.NoteMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.NoteMode</h3>
+<ul class="enum">
+<li class="const">ARDOUR.NoteMode.Sustained</li>
+<li class="const">ARDOUR.NoteMode.Percussive</li>
+</ul>
+<h3 id="ARDOUR.PortFlags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PortFlags</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PortFlags.IsInput</li>
+<li class="const">ARDOUR.PortFlags.IsOutput</li>
+<li class="const">ARDOUR.PortFlags.IsPhysical</li>
+<li class="const">ARDOUR.PortFlags.CanMonitor</li>
+<li class="const">ARDOUR.PortFlags.IsTerminal</li>
+</ul>
+<h3 id="ARDOUR.MidiPortFlags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiPortFlags</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MidiPortFlags.MidiPortMusic</li>
+<li class="const">ARDOUR.MidiPortFlags.MidiPortControl</li>
+<li class="const">ARDOUR.MidiPortFlags.MidiPortSelection</li>
+<li class="const">ARDOUR.MidiPortFlags.MidiPortVirtual</li>
+</ul>
+<h3 id="ARDOUR.PlaylistDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PlaylistDisposition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PlaylistDisposition.CopyPlaylist</li>
+<li class="const">ARDOUR.PlaylistDisposition.NewPlaylist</li>
+<li class="const">ARDOUR.PlaylistDisposition.SharePlaylist</li>
+</ul>
+<h3 id="ARDOUR.MidiTrackNameSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiTrackNameSource</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MidiTrackNameSource.SMFTrackNumber</li>
+<li class="const">ARDOUR.MidiTrackNameSource.SMFTrackName</li>
+<li class="const">ARDOUR.MidiTrackNameSource.SMFInstrumentName</li>
+</ul>
+<h3 id="ARDOUR.MidiTempoMapDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiTempoMapDisposition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MidiTempoMapDisposition.SMFTempoIgnore</li>
+<li class="const">ARDOUR.MidiTempoMapDisposition.SMFTempoUse</li>
+</ul>
+<h3 id="ARDOUR.RegionEquivalence" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionEquivalence</h3>
+<ul class="enum">
+<li class="const">ARDOUR.RegionEquivalence.Exact</li>
+<li class="const">ARDOUR.RegionEquivalence.Enclosed</li>
+<li class="const">ARDOUR.RegionEquivalence.Overlap</li>
+<li class="const">ARDOUR.RegionEquivalence.LayerTime</li>
+</ul>
+<h3 id="ARDOUR.RegionPoint" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionPoint</h3>
+<ul class="enum">
+<li class="const">ARDOUR.RegionPoint.Start</li>
+<li class="const">ARDOUR.RegionPoint.End</li>
+<li class="const">ARDOUR.RegionPoint.SyncPoint</li>
+</ul>
+<h3 id="ARDOUR.PositionLockStyle" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PositionLockStyle</h3>
+<ul class="enum">
+<li class="const">ARDOUR.TempoSection.PositionLockStyle.AudioTime</li>
+<li class="const">ARDOUR.TempoSection.PositionLockStyle.MusicTime</li>
+</ul>
+<h3 id="ARDOUR.TempoSection.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TempoSection.Type</h3>
+<ul class="enum">
+<li class="const">ARDOUR.TempoSection.Type.Ramp</li>
+<li class="const">ARDOUR.TempoSection.Type.Constant</li>
+</ul>
+<h3 id="ARDOUR.TrackMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TrackMode</h3>
+<ul class="enum">
+<li class="const">ARDOUR.TrackMode.Normal</li>
+<li class="const">ARDOUR.TrackMode.NonLayered</li>
+</ul>
+<h3 id="ARDOUR.TransportRequestSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TransportRequestSource</h3>
+<ul class="enum">
+<li class="const">ARDOUR.TransportRequestSource.TRS_Engine</li>
+<li class="const">ARDOUR.TransportRequestSource.TRS_UI</li>
+</ul>
+<h3 id="ARDOUR.LocateTransportDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LocateTransportDisposition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.LocateTransportDisposition.MustRoll</li>
+<li class="const">ARDOUR.LocateTransportDisposition.MustStop</li>
+<li class="const">ARDOUR.LocateTransportDisposition.RollIfAppropriate</li>
+</ul>
+<h3 id="ARDOUR.SampleFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SampleFormat</h3>
+<ul class="enum">
+<li class="const">ARDOUR.SampleFormat.Float</li>
+<li class="const">ARDOUR.SampleFormat.Int24</li>
+<li class="const">ARDOUR.SampleFormat.Int16</li>
+</ul>
+<h3 id="ARDOUR.HeaderFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.HeaderFormat</h3>
+<ul class="enum">
+<li class="const">ARDOUR.HeaderFormat.BWF</li>
+<li class="const">ARDOUR.HeaderFormat.WAVE</li>
+<li class="const">ARDOUR.HeaderFormat.WAVE64</li>
+<li class="const">ARDOUR.HeaderFormat.CAF</li>
+<li class="const">ARDOUR.HeaderFormat.AIFF</li>
+<li class="const">ARDOUR.HeaderFormat.iXML</li>
+<li class="const">ARDOUR.HeaderFormat.RF64</li>
+<li class="const">ARDOUR.HeaderFormat.RF64_WAV</li>
+<li class="const">ARDOUR.HeaderFormat.MBWF</li>
+<li class="const">ARDOUR.HeaderFormat.FLAC</li>
+</ul>
+<h3 id="ARDOUR.InsertMergePolicy" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.InsertMergePolicy</h3>
+<ul class="enum">
+<li class="const">ARDOUR.InsertMergePolicy.Reject</li>
+<li class="const">ARDOUR.InsertMergePolicy.Relax</li>
+<li class="const">ARDOUR.InsertMergePolicy.Replace</li>
+<li class="const">ARDOUR.InsertMergePolicy.TruncateExisting</li>
+<li class="const">ARDOUR.InsertMergePolicy.TruncateAddition</li>
+<li class="const">ARDOUR.InsertMergePolicy.Extend</li>
+</ul>
+<h3 id="ARDOUR.AFLPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AFLPosition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.AFLPosition.AFLFromBeforeProcessors</li>
+<li class="const">ARDOUR.AFLPosition.AFLFromAfterProcessors</li>
+</ul>
+<h3 id="ARDOUR.PFLPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PFLPosition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.PFLPosition.PFLFromBeforeProcessors</li>
+<li class="const">ARDOUR.PFLPosition.PFLFromAfterProcessors</li>
+</ul>
+<h3 id="ARDOUR.AutoReturnTarget" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoReturnTarget</h3>
+<ul class="enum">
+<li class="const">ARDOUR.AutoReturnTarget.LastLocate</li>
+<li class="const">ARDOUR.AutoReturnTarget.RangeSelectionStart</li>
+<li class="const">ARDOUR.AutoReturnTarget.Loop</li>
+<li class="const">ARDOUR.AutoReturnTarget.RegionSelectionStart</li>
+</ul>
+<h3 id="ARDOUR.FadeShape" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.FadeShape</h3>
+<ul class="enum">
+<li class="const">ARDOUR.FadeShape.FadeLinear</li>
+<li class="const">ARDOUR.FadeShape.FadeFast</li>
+<li class="const">ARDOUR.FadeShape.FadeSlow</li>
+<li class="const">ARDOUR.FadeShape.FadeConstantPower</li>
+<li class="const">ARDOUR.FadeShape.FadeSymmetric</li>
+</ul>
+<h3 id="ARDOUR.LoopFadeChoice" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LoopFadeChoice</h3>
+<ul class="enum">
+<li class="const">ARDOUR.LoopFadeChoice.NoLoopFade</li>
+<li class="const">ARDOUR.LoopFadeChoice.EndLoopFade</li>
+<li class="const">ARDOUR.LoopFadeChoice.BothLoopFade</li>
+<li class="const">ARDOUR.LoopFadeChoice.XFadeLoop</li>
+</ul>
+<h3 id="ARDOUR.DenormalModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DenormalModel</h3>
+<ul class="enum">
+<li class="const">ARDOUR.DenormalModel.DenormalNone</li>
+<li class="const">ARDOUR.DenormalModel.DenormalFTZ</li>
+<li class="const">ARDOUR.DenormalModel.DenormalDAZ</li>
+<li class="const">ARDOUR.DenormalModel.DenormalFTZDAZ</li>
+</ul>
+<h3 id="ARDOUR.BufferingPreset" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.BufferingPreset</h3>
+<ul class="enum">
+<li class="const">ARDOUR.BufferingPreset.Small</li>
+<li class="const">ARDOUR.BufferingPreset.Medium</li>
+<li class="const">ARDOUR.BufferingPreset.Large</li>
+<li class="const">ARDOUR.BufferingPreset.Custom</li>
+</ul>
+<h3 id="ARDOUR.EditMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.EditMode</h3>
+<ul class="enum">
+<li class="const">ARDOUR.EditMode.Slide</li>
+<li class="const">ARDOUR.EditMode.Splice</li>
+<li class="const">ARDOUR.EditMode.Ripple</li>
+<li class="const">ARDOUR.EditMode.Lock</li>
+</ul>
+<h3 id="ARDOUR.AutoConnectOption" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoConnectOption</h3>
+<ul class="enum">
+<li class="const">ARDOUR.AutoConnectOption.ManualConnect</li>
+<li class="const">ARDOUR.AutoConnectOption.AutoConnectPhysical</li>
+<li class="const">ARDOUR.AutoConnectOption.AutoConnectMaster</li>
+</ul>
+<h3 id="ARDOUR.LayerModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LayerModel</h3>
+<ul class="enum">
+<li class="const">ARDOUR.LayerModel.LaterHigher</li>
+<li class="const">ARDOUR.LayerModel.Manual</li>
+</ul>
+<h3 id="ARDOUR.ListenPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ListenPosition</h3>
+<ul class="enum">
+<li class="const">ARDOUR.ListenPosition.AfterFaderListen</li>
+<li class="const">ARDOUR.ListenPosition.PreFaderListen</li>
+</ul>
+<h3 id="ARDOUR.MonitorModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorModel</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MonitorModel.HardwareMonitoring</li>
+<li class="const">ARDOUR.MonitorModel.SoftwareMonitoring</li>
+<li class="const">ARDOUR.MonitorModel.ExternalMonitoring</li>
+</ul>
+<h3 id="ARDOUR.RegionSelectionAfterSplit" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionSelectionAfterSplit</h3>
+<ul class="enum">
+<li class="const">ARDOUR.RegionSelectionAfterSplit.None</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedLeft</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedRight</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedBoth</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.Existing</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedLeft</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedRight</li>
+<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedBoth</li>
+</ul>
+<h3 id="ARDOUR.RangeSelectionAfterSplit" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RangeSelectionAfterSplit</h3>
+<ul class="enum">
+<li class="const">ARDOUR.RangeSelectionAfterSplit.ClearSel</li>
+<li class="const">ARDOUR.RangeSelectionAfterSplit.PreserveSel</li>
+<li class="const">ARDOUR.RangeSelectionAfterSplit.ForceSel</li>
+</ul>
+<h3 id="ARDOUR.ScreenSaverMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ScreenSaverMode</h3>
+<ul class="enum">
+<li class="const">ARDOUR.ScreenSaverMode.InhibitNever</li>
+<li class="const">ARDOUR.ScreenSaverMode.InhibitWhileRecording</li>
+<li class="const">ARDOUR.ScreenSaverMode.InhibitAlways</li>
+</ul>
+<h3 id="ARDOUR.ClockDeltaMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ClockDeltaMode</h3>
+<ul class="enum">
+<li class="const">ARDOUR.ClockDeltaMode.NoDelta</li>
+<li class="const">ARDOUR.ClockDeltaMode.DeltaEditPoint</li>
+<li class="const">ARDOUR.ClockDeltaMode.DeltaOriginMarker</li>
+</ul>
+<h3 id="ARDOUR.WaveformScale" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.WaveformScale</h3>
+<ul class="enum">
+<li class="const">ARDOUR.WaveformScale.Linear</li>
+<li class="const">ARDOUR.WaveformScale.Logarithmic</li>
+</ul>
+<h3 id="ARDOUR.WaveformShape" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.WaveformShape</h3>
+<ul class="enum">
+<li class="const">ARDOUR.WaveformShape.Traditional</li>
+<li class="const">ARDOUR.WaveformShape.Rectified</li>
+</ul>
+<h3 id="ARDOUR.MeterLineUp" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterLineUp</h3>
+<ul class="enum">
+<li class="const">ARDOUR.MeterLineUp.MeteringLineUp24</li>
+<li class="const">ARDOUR.MeterLineUp.MeteringLineUp20</li>
+<li class="const">ARDOUR.MeterLineUp.MeteringLineUp18</li>
+<li class="const">ARDOUR.MeterLineUp.MeteringLineUp15</li>
+<li class="const">ARDOUR.InputMeterLayout.MeteringLineUp15</li>
+</ul>
+<h3 id="ARDOUR.InputMeterLayout" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.InputMeterLayout</h3>
+<ul class="enum">
+<li class="const">ARDOUR.InputMeterLayout.LayoutVertical</li>
+<li class="const">ARDOUR.InputMeterLayout.LayoutHorizontal</li>
+<li class="const">ARDOUR.InputMeterLayout.LayoutAutomatic</li>
+</ul>
+<h3 id="ARDOUR.VUMeterStandard" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.VUMeterStandard</h3>
+<ul class="enum">
+<li class="const">ARDOUR.VUMeterStandard.MeteringVUfrench</li>
+<li class="const">ARDOUR.VUMeterStandard.MeteringVUamerican</li>
+<li class="const">ARDOUR.VUMeterStandard.MeteringVUstandard</li>
+<li class="const">ARDOUR.VUMeterStandard.MeteringVUeight</li>
+</ul>
+<h3 id="ARDOUR.ShuttleUnits" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ShuttleUnits</h3>
+<ul class="enum">
+<li class="const">ARDOUR.ShuttleUnits.Percentage</li>
+<li class="const">ARDOUR.ShuttleUnits.Semitones</li>
+</ul>
+<h3 id="ARDOUR.SyncSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SyncSource</h3>
+<ul class="enum">
+<li class="const">ARDOUR.SyncSource.Engine</li>
+<li class="const">ARDOUR.SyncSource.MTC</li>
+<li class="const">ARDOUR.SyncSource.MIDIClock</li>
+<li class="const">ARDOUR.SyncSource.LTC</li>
+</ul>
+<h3 id="ARDOUR.TracksAutoNamingRule" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TracksAutoNamingRule</h3>
+<ul class="enum">
+<li class="const">ARDOUR.TracksAutoNamingRule.UseDefaultNames</li>
+<li class="const">ARDOUR.TracksAutoNamingRule.NameAfterDriver</li>
+</ul>
+<h3 id="ARDOUR.Session.RecordState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Session.RecordState</h3>
+<ul class="enum">
+<li class="const">ARDOUR.Session.RecordState.Disabled</li>
+<li class="const">ARDOUR.Session.RecordState.Enabled</li>
+<li class="const">ARDOUR.Session.RecordState.Recording</li>
+</ul>
+<h3 id="ARDOUR.Location.Flags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Location.Flags</h3>
+<ul class="enum">
+<li class="const">ARDOUR.LocationFlags.IsMark</li>
+<li class="const">ARDOUR.LocationFlags.IsAutoPunch</li>
+<li class="const">ARDOUR.LocationFlags.IsAutoLoop</li>
+<li class="const">ARDOUR.LocationFlags.IsHidden</li>
+<li class="const">ARDOUR.LocationFlags.IsCDMarker</li>
+<li class="const">ARDOUR.LocationFlags.IsRangeMarker</li>
+<li class="const">ARDOUR.LocationFlags.IsSessionRange</li>
+<li class="const">ARDOUR.LocationFlags.IsSkip</li>
+<li class="const">ARDOUR.LocationFlags.IsSkipping</li>
+</ul>
+<h3 id="Glib.FileTest" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Glib.FileTest</h3>
+<ul class="enum">
+<li class="const">ARDOUR.LuaAPI.FileTest.IsRegular</li>
+<li class="const">ARDOUR.LuaAPI.FileTest.IsSymlink</li>
+<li class="const">ARDOUR.LuaAPI.FileTest.IsDir</li>
+<li class="const">ARDOUR.LuaAPI.FileTest.IsExecutable</li>
+<li class="const">ARDOUR.LuaAPI.FileTest.Exists</li>
+</ul>
+<h3 id="ARDOUR.DSP.Biquad.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Biquad.Type</h3>
+<ul class="enum">
+<li class="const">ARDOUR.DSP.BiquadType.LowPass</li>
+<li class="const">ARDOUR.DSP.BiquadType.HighPass</li>
+<li class="const">ARDOUR.DSP.BiquadType.BandPassSkirt</li>
+<li class="const">ARDOUR.DSP.BiquadType.BandPass0dB</li>
+<li class="const">ARDOUR.DSP.BiquadType.Notch</li>
+<li class="const">ARDOUR.DSP.BiquadType.AllPass</li>
+<li class="const">ARDOUR.DSP.BiquadType.Peaking</li>
+<li class="const">ARDOUR.DSP.BiquadType.LowShelf</li>
+<li class="const">ARDOUR.DSP.BiquadType.HighShelf</li>
+</ul>
+<h3 id="ARDOUR.DSP.Generator.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Generator.Type</h3>
+<ul class="enum">
+<li class="const">ARDOUR.DSP.NoiseType.UniformWhiteNoise</li>
+<li class="const">ARDOUR.DSP.NoiseType.GaussianWhiteNoise</li>
+<li class="const">ARDOUR.DSP.NoiseType.PinkNoise</li>
+</ul>
+<h3 id="ARDOUR.DSP.LTC_TV_STANDARD" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.LTC_TV_STANDARD</h3>
+<ul class="enum">
+<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_525_60</li>
+<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_625_50</li>
+<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_1125_60</li>
+<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_FILM_24</li>
+</ul>
+<h3 id="ARDOUR.DSP.Convolver.IRChannelConfig" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Convolver.IRChannelConfig</h3>
+<ul class="enum">
+<li class="const">ARDOUR.DSP.IRChannelConfig.Mono</li>
+<li class="const">ARDOUR.DSP.IRChannelConfig.MonoToStereo</li>
+<li class="const">ARDOUR.DSP.IRChannelConfig.Stereo</li>
+</ul>
+<h3 id="Cairo.LineCap" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.LineCap</h3>
+<ul class="enum">
+<li class="const">Cairo.LineCap.Butt</li>
+<li class="const">Cairo.LineCap.Round</li>
+<li class="const">Cairo.LineCap.Square</li>
+</ul>
+<h3 id="Cairo.LineJoin" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.LineJoin</h3>
+<ul class="enum">
+<li class="const">Cairo.LineJoin.Miter</li>
+<li class="const">Cairo.LineJoin.Round</li>
+<li class="const">Cairo.LineJoin.Bevel</li>
+</ul>
+<h3 id="Cairo.Operator" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.Operator</h3>
+<ul class="enum">
+<li class="const">Cairo.Operator.Clear</li>
+<li class="const">Cairo.Operator.Source</li>
+<li class="const">Cairo.Operator.Over</li>
+<li class="const">Cairo.Operator.Add</li>
+</ul>
+<h3 id="Cairo.Format" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.Format</h3>
+<ul class="enum">
+<li class="const">Cairo.Format.ARGB32</li>
+<li class="const">Cairo.Format.RGB24</li>
+</ul>
+<h3 id="Pango.EllipsizeMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.EllipsizeMode</h3>
+<ul class="enum">
+<li class="const">Cairo.EllipsizeMode.None</li>
+<li class="const">Cairo.EllipsizeMode.Start</li>
+<li class="const">Cairo.EllipsizeMode.Middle</li>
+<li class="const">Cairo.EllipsizeMode.End</li>
+</ul>
+<h3 id="Pango.Alignment" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.Alignment</h3>
+<ul class="enum">
+<li class="const">Cairo.Alignment.Left</li>
+<li class="const">Cairo.Alignment.Center</li>
+<li class="const">Cairo.Alignment.Right</li>
+</ul>
+<h3 id="Pango.WrapMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.WrapMode</h3>
+<ul class="enum">
+<li class="const">Cairo.WrapMode.Word</li>
+<li class="const">Cairo.WrapMode.Char</li>
+<li class="const">Cairo.WrapMode.WordChar</li>
+</ul>
+<h3 id="LuaDialog.Message.MessageType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Message.MessageType</h3>
+<ul class="enum">
+<li class="const">LuaDialog.MessageType.Info</li>
+<li class="const">LuaDialog.MessageType.Warning</li>
+<li class="const">LuaDialog.MessageType.Question</li>
+<li class="const">LuaDialog.MessageType.Error</li>
+</ul>
+<h3 id="LuaDialog.Message.ButtonType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Message.ButtonType</h3>
+<ul class="enum">
+<li class="const">LuaDialog.ButtonType.OK</li>
+<li class="const">LuaDialog.ButtonType.Close</li>
+<li class="const">LuaDialog.ButtonType.Cancel</li>
+<li class="const">LuaDialog.ButtonType.Yes_No</li>
+<li class="const">LuaDialog.ButtonType.OK_Cancel</li>
+</ul>
+<h3 id="LuaDialog.Response" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Response</h3>
+<ul class="enum">
+<li class="const">LuaDialog.Response.OK</li>
+<li class="const">LuaDialog.Response.Cancel</li>
+<li class="const">LuaDialog.Response.Close</li>
+<li class="const">LuaDialog.Response.Yes</li>
+<li class="const">LuaDialog.Response.No</li>
+<li class="const">LuaDialog.Response.None</li>
+</ul>
+<h3 id="RouteDialogs.InsertAt" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;RouteDialogs.InsertAt</h3>
+<ul class="enum">
+<li class="const">ArdourUI.InsertAt.BeforeSelection</li>
+<li class="const">ArdourUI.InsertAt.AfterSelection</li>
+<li class="const">ArdourUI.InsertAt.First</li>
+<li class="const">ArdourUI.InsertAt.Last</li>
+</ul>
+<h3 id="ArdourMarker.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ArdourMarker.Type</h3>
+<ul class="enum">
+<li class="const">ArdourUI.MarkerType.Mark</li>
+<li class="const">ArdourUI.MarkerType.Tempo</li>
+<li class="const">ArdourUI.MarkerType.Meter</li>
+<li class="const">ArdourUI.MarkerType.SessionStart</li>
+<li class="const">ArdourUI.MarkerType.SessionEnd</li>
+<li class="const">ArdourUI.MarkerType.RangeStart</li>
+<li class="const">ArdourUI.MarkerType.RangeEnd</li>
+<li class="const">ArdourUI.MarkerType.LoopStart</li>
+<li class="const">ArdourUI.MarkerType.LoopEnd</li>
+<li class="const">ArdourUI.MarkerType.PunchIn</li>
+<li class="const">ArdourUI.MarkerType.PunchOut</li>
+</ul>
+<h3 id="Selection.Operation" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Selection.Operation</h3>
+<ul class="enum">
+<li class="const">ArdourUI.SelectionOp.Toggle</li>
+<li class="const">ArdourUI.SelectionOp.Set</li>
+<li class="const">ArdourUI.SelectionOp.Extend</li>
+<li class="const">ArdourUI.SelectionOp.Add</li>
+</ul>
+<h3 id="TimeAxisView.TrackHeightMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;TimeAxisView.TrackHeightMode</h3>
+<ul class="enum">
+<li class="const">ArdourUI.TrackHeightMode.OnlySelf</li>
+<li class="const">ArdourUI.TrackHeightMode.TotalHeight</li>
+<li class="const">ArdourUI.TrackHeightMode.HeightPerLane,</li>
+</ul>
+<h3 id="Editing.GridType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.GridType</h3>
+<ul class="enum">
+<li class="const">Editing.GridTypeNone</li>
+<li class="const">Editing.GridTypeBar</li>
+<li class="const">Editing.GridTypeBeat</li>
+<li class="const">Editing.GridTypeBeatDiv2</li>
+<li class="const">Editing.GridTypeBeatDiv4</li>
+<li class="const">Editing.GridTypeBeatDiv8</li>
+<li class="const">Editing.GridTypeBeatDiv16</li>
+<li class="const">Editing.GridTypeBeatDiv32</li>
+<li class="const">Editing.GridTypeBeatDiv3</li>
+<li class="const">Editing.GridTypeBeatDiv6</li>
+<li class="const">Editing.GridTypeBeatDiv12</li>
+<li class="const">Editing.GridTypeBeatDiv24</li>
+<li class="const">Editing.GridTypeBeatDiv5</li>
+<li class="const">Editing.GridTypeBeatDiv10</li>
+<li class="const">Editing.GridTypeBeatDiv20</li>
+<li class="const">Editing.GridTypeBeatDiv7</li>
+<li class="const">Editing.GridTypeBeatDiv14</li>
+<li class="const">Editing.GridTypeBeatDiv28</li>
+<li class="const">Editing.GridTypeTimecode</li>
+<li class="const">Editing.GridTypeMinSec</li>
+<li class="const">Editing.GridTypeCDFrame</li>
+</ul>
+<h3 id="Editing.SnapMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.SnapMode</h3>
+<ul class="enum">
+<li class="const">Editing.SnapOff</li>
+<li class="const">Editing.SnapNormal</li>
+<li class="const">Editing.SnapMagnetic</li>
+</ul>
+<h3 id="Editing.MouseMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.MouseMode</h3>
+<ul class="enum">
+<li class="const">Editing.MouseObject</li>
+<li class="const">Editing.MouseRange</li>
+<li class="const">Editing.MouseCut</li>
+<li class="const">Editing.MouseTimeFX</li>
+<li class="const">Editing.MouseAudition</li>
+<li class="const">Editing.MouseDraw</li>
+<li class="const">Editing.MouseContent</li>
+</ul>
+<h3 id="Editing.ZoomFocus" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ZoomFocus</h3>
+<ul class="enum">
+<li class="const">Editing.ZoomFocusLeft</li>
+<li class="const">Editing.ZoomFocusRight</li>
+<li class="const">Editing.ZoomFocusCenter</li>
+<li class="const">Editing.ZoomFocusPlayhead</li>
+<li class="const">Editing.ZoomFocusMouse</li>
+<li class="const">Editing.ZoomFocusEdit</li>
+</ul>
+<h3 id="Editing.DisplayControl" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.DisplayControl</h3>
+<ul class="enum">
+<li class="const">Editing.FollowPlayhead</li>
+<li class="const">Editing.ShowMeasures</li>
+<li class="const">Editing.ShowWaveforms</li>
+<li class="const">Editing.ShowWaveformsRecording</li>
+</ul>
+<h3 id="Editing.ImportMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportMode</h3>
+<ul class="enum">
+<li class="const">Editing.ImportAsRegion</li>
+<li class="const">Editing.ImportToTrack</li>
+<li class="const">Editing.ImportAsTrack</li>
+</ul>
+<h3 id="Editing.ImportPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportPosition</h3>
+<ul class="enum">
+<li class="const">Editing.ImportAtTimestamp</li>
+<li class="const">Editing.ImportAtEditPoint</li>
+<li class="const">Editing.ImportAtPlayhead</li>
+<li class="const">Editing.ImportAtStart</li>
+</ul>
+<h3 id="Editing.ImportDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportDisposition</h3>
+<ul class="enum">
+<li class="const">Editing.ImportDistinctFiles</li>
+<li class="const">Editing.ImportMergeFiles</li>
+<li class="const">Editing.ImportSerializeFiles</li>
+<li class="const">Editing.ImportDistinctChannels</li>
+</ul>
+<h3 id="LuaSignal.LuaSignal" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaSignal.LuaSignal</h3>
+<ul class="enum">
+<li class="const">LuaSignal.ConfigChanged</li>
+<li class="const">LuaSignal.EngineRunning</li>
+<li class="const">LuaSignal.EngineStopped</li>
+<li class="const">LuaSignal.EngineHalted</li>
+<li class="const">LuaSignal.EngineDeviceListChanged</li>
+<li class="const">LuaSignal.BufferSizeChanged</li>
+<li class="const">LuaSignal.SampleRateChanged</li>
+<li class="const">LuaSignal.FeedbackDetected</li>
+<li class="const">LuaSignal.SuccessfulGraphSort</li>
+<li class="const">LuaSignal.StartTimeChanged</li>
+<li class="const">LuaSignal.EndTimeChanged</li>
+<li class="const">LuaSignal.Exported</li>
+<li class="const">LuaSignal.Change</li>
+<li class="const">LuaSignal.SessionConfigChanged</li>
+<li class="const">LuaSignal.TransportStateChange</li>
+<li class="const">LuaSignal.DirtyChanged</li>
+<li class="const">LuaSignal.StateSaved</li>
+<li class="const">LuaSignal.Xrun</li>
+<li class="const">LuaSignal.TransportLooped</li>
+<li class="const">LuaSignal.SoloActive</li>
+<li class="const">LuaSignal.SoloChanged</li>
+<li class="const">LuaSignal.IsolatedChanged</li>
+<li class="const">LuaSignal.MonitorChanged</li>
+<li class="const">LuaSignal.RecordStateChanged</li>
+<li class="const">LuaSignal.RecordArmStateChanged</li>
+<li class="const">LuaSignal.AudioLoopLocationChanged</li>
+<li class="const">LuaSignal.AudioPunchLocationChanged</li>
+<li class="const">LuaSignal.LocationsModified</li>
+<li class="const">LuaSignal.AuditionActive</li>
+<li class="const">LuaSignal.BundleAddedOrRemoved</li>
+<li class="const">LuaSignal.PositionChanged</li>
+<li class="const">LuaSignal.Located</li>
+<li class="const">LuaSignal.RoutesReconnected</li>
+<li class="const">LuaSignal.RouteAdded</li>
+<li class="const">LuaSignal.RouteGroupPropertyChanged</li>
+<li class="const">LuaSignal.RouteAddedToRouteGroup</li>
+<li class="const">LuaSignal.RouteRemovedFromRouteGroup</li>
+<li class="const">LuaSignal.StepEditStatusChange</li>
+<li class="const">LuaSignal.RouteGroupAdded</li>
+<li class="const">LuaSignal.RouteGroupRemoved</li>
+<li class="const">LuaSignal.RouteGroupsReordered</li>
+<li class="const">LuaSignal.PluginListChanged</li>
+<li class="const">LuaSignal.PluginStatusChanged</li>
+<li class="const">LuaSignal.DiskOverrun</li>
+<li class="const">LuaSignal.DiskUnderrun</li>
+<li class="const">LuaSignal.RegionsPropertyChanged</li>
+<li class="const">LuaSignal.LuaTimerS</li>
+<li class="const">LuaSignal.LuaTimerDS</li>
+<li class="const">LuaSignal.SetSession</li>
+</ul>
+<h2 id="h_index" >Class Index</h2>
+<ul class="classindex">
+<li><a class="" href="#ARDOUR">ARDOUR</a></li>
+<li><a class="" href="#ARDOUR:Amp">ARDOUR:Amp</a></li>
+<li><a class="" href="#ARDOUR:AsyncMIDIPort">ARDOUR:AsyncMIDIPort</a></li>
+<li><a class="" href="#ARDOUR:AudioBackend">ARDOUR:AudioBackend</a></li>
+<li><a class="" href="#ARDOUR:AudioBackendInfo">ARDOUR:AudioBackendInfo</a></li>
+<li><a class="" href="#ARDOUR:AudioBuffer">ARDOUR:AudioBuffer</a></li>
+<li><a class="" href="#ARDOUR:AudioEngine">ARDOUR:AudioEngine</a></li>
+<li><a class="" href="#ARDOUR:AudioPlaylist">ARDOUR:AudioPlaylist</a></li>
+<li><a class="" href="#ARDOUR:AudioPort">ARDOUR:AudioPort</a></li>
+<li><a class="" href="#ARDOUR:AudioPortMeters">ARDOUR:AudioPortMeters</a></li>
+<li><a class="" href="#ARDOUR:AudioRange">ARDOUR:AudioRange</a></li>
+<li><a class="" href="#ARDOUR:AudioRangeList">ARDOUR:AudioRangeList</a></li>
+<li><a class="" href="#ARDOUR:AudioRegion">ARDOUR:AudioRegion</a></li>
+<li><a class="" href="#ARDOUR:AudioRom">ARDOUR:AudioRom</a></li>
+<li><a class="" href="#ARDOUR:AudioSource">ARDOUR:AudioSource</a></li>
+<li><a class="" href="#ARDOUR:AudioTrack">ARDOUR:AudioTrack</a></li>
+<li><a class="" href="#ARDOUR:AudioTrackList">ARDOUR:AudioTrackList</a></li>
+<li><a class="" href="#ARDOUR:Automatable">ARDOUR:Automatable</a></li>
+<li><a class="" href="#ARDOUR:AutomatableSequence">ARDOUR:AutomatableSequence</a></li>
+<li><a class="" href="#ARDOUR:AutomationControl">ARDOUR:AutomationControl</a></li>
+<li><a class="" href="#ARDOUR:AutomationList">ARDOUR:AutomationList</a></li>
+<li><a class="" href="#ARDOUR:BackendVector">ARDOUR:BackendVector</a></li>
+<li><a class="" href="#ARDOUR:BeatsSamplesConverter">ARDOUR:BeatsSamplesConverter</a></li>
+<li><a class="" href="#ARDOUR:BufferSet">ARDOUR:BufferSet</a></li>
+<li><a class="" href="#ARDOUR:Bundle">ARDOUR:Bundle</a></li>
+<li><a class="" href="#ARDOUR:BundleListPtr">ARDOUR:BundleListPtr</a></li>
+<li><a class="" href="#ARDOUR:ChanCount">ARDOUR:ChanCount</a></li>
+<li><a class="" href="#ARDOUR:ChanMapping">ARDOUR:ChanMapping</a></li>
+<li><a class="" href="#ARDOUR:ControlList">ARDOUR:ControlList</a></li>
+<li><a class="" href="#ARDOUR:ControlListPtr">ARDOUR:ControlListPtr</a></li>
+<li><a class="" href="#ARDOUR:DSP">ARDOUR.DSP</a></li>
+<li><a class="" href="#ARDOUR:DSP:Biquad">ARDOUR:DSP:Biquad</a></li>
+<li><a class="" href="#ARDOUR:DSP:Convolution">ARDOUR:DSP:Convolution</a></li>
+<li><a class="" href="#ARDOUR:DSP:Convolver">ARDOUR:DSP:Convolver</a></li>
+<li><a class="" href="#ARDOUR:DSP:DspShm">ARDOUR:DSP:DspShm</a></li>
+<li><a class="" href="#ARDOUR:DSP:FFTSpectrum">ARDOUR:DSP:FFTSpectrum</a></li>
+<li><a class="" href="#ARDOUR:DSP:Generator">ARDOUR:DSP:Generator</a></li>
+<li><a class="" href="#ARDOUR:DSP:IRSettings">ARDOUR:DSP:IRSettings</a></li>
+<li><a class="" href="#ARDOUR:DSP:LTCReader">ARDOUR:DSP:LTCReader</a></li>
+<li><a class="" href="#ARDOUR:DSP:LowPass">ARDOUR:DSP:LowPass</a></li>
+<li><a class="" href="#ARDOUR:DataType">ARDOUR:DataType</a></li>
+<li><a class="" href="#ARDOUR:DelayLine">ARDOUR:DelayLine</a></li>
+<li><a class="" href="#ARDOUR:Delivery">ARDOUR:Delivery</a></li>
+<li><a class="" href="#ARDOUR:DeviceStatus">ARDOUR:DeviceStatus</a></li>
+<li><a class="" href="#ARDOUR:DeviceStatusVector">ARDOUR:DeviceStatusVector</a></li>
+<li><a class="" href="#ARDOUR:DiskIOProcessor">ARDOUR:DiskIOProcessor</a></li>
+<li><a class="" href="#ARDOUR:DiskReader">ARDOUR:DiskReader</a></li>
+<li><a class="" href="#ARDOUR:DiskWriter">ARDOUR:DiskWriter</a></li>
+<li><a class="" href="#ARDOUR:DoubleBeatsSamplesConverter">ARDOUR:DoubleBeatsSamplesConverter</a></li>
+<li><a class="" href="#ARDOUR:EventList">ARDOUR:EventList</a></li>
+<li><a class="" href="#ARDOUR:FileSource">ARDOUR:FileSource</a></li>
+<li><a class="" href="#ARDOUR:FluidSynth">ARDOUR:FluidSynth</a></li>
+<li><a class="" href="#ARDOUR:GainControl">ARDOUR:GainControl</a></li>
+<li><a class="" href="#ARDOUR:IO">ARDOUR:IO</a></li>
+<li><a class="" href="#ARDOUR:IOProcessor">ARDOUR:IOProcessor</a></li>
+<li><a class="" href="#ARDOUR:InterThreadInfo">ARDOUR:InterThreadInfo</a></li>
+<li><a class="" href="#ARDOUR:InternalReturn">ARDOUR:InternalReturn</a></li>
+<li><a class="" href="#ARDOUR:InternalSend">ARDOUR:InternalSend</a></li>
+<li><a class="" href="#ARDOUR:LatencyRange">ARDOUR:LatencyRange</a></li>
+<li><a class="" href="#ARDOUR:Latent">ARDOUR:Latent</a></li>
+<li><a class="" href="#ARDOUR:Location">ARDOUR:Location</a></li>
+<li><a class="" href="#ARDOUR:LocationList">ARDOUR:LocationList</a></li>
+<li><a class="" href="#ARDOUR:Locations">ARDOUR:Locations</a></li>
+<li><a class="" href="#ARDOUR:LuaAPI">ARDOUR.LuaAPI</a></li>
+<li><a class="" href="#ARDOUR:LuaAPI:Rubberband">ARDOUR:LuaAPI:Rubberband</a></li>
+<li><a class="" href="#ARDOUR:LuaAPI:Vamp">ARDOUR:LuaAPI:Vamp</a></li>
+<li><a class="" href="#ARDOUR:LuaOSC:Address">ARDOUR:LuaOSC:Address</a></li>
+<li><a class="" href="#ARDOUR:LuaProc">ARDOUR:LuaProc</a></li>
+<li><a class="" href="#ARDOUR:LuaTableRef">ARDOUR:LuaTableRef</a></li>
+<li><a class="" href="#ARDOUR:MIDIPortMeters">ARDOUR:MIDIPortMeters</a></li>
+<li><a class="" href="#ARDOUR:Meter">ARDOUR:Meter</a></li>
+<li><a class="" href="#ARDOUR:MeterSection">ARDOUR:MeterSection</a></li>
+<li><a class="" href="#ARDOUR:MetricSection">ARDOUR:MetricSection</a></li>
+<li><a class="" href="#ARDOUR:MidiBuffer">ARDOUR:MidiBuffer</a></li>
+<li><a class="" href="#ARDOUR:MidiModel">ARDOUR:MidiModel</a></li>
+<li><a class="" href="#ARDOUR:MidiModel:DiffCommand">ARDOUR:MidiModel:DiffCommand</a></li>
+<li><a class="" href="#ARDOUR:MidiModel:NoteDiffCommand">ARDOUR:MidiModel:NoteDiffCommand</a></li>
+<li><a class="" href="#ARDOUR:MidiPlaylist">ARDOUR:MidiPlaylist</a></li>
+<li><a class="" href="#ARDOUR:MidiPort">ARDOUR:MidiPort</a></li>
+<li><a class="" href="#ARDOUR:MidiRegion">ARDOUR:MidiRegion</a></li>
+<li><a class="" href="#ARDOUR:MidiSource">ARDOUR:MidiSource</a></li>
+<li><a class="" href="#ARDOUR:MidiTrack">ARDOUR:MidiTrack</a></li>
+<li><a class="" href="#ARDOUR:MidiTrackList">ARDOUR:MidiTrackList</a></li>
+<li><a class="" href="#ARDOUR:MonitorControl">ARDOUR:MonitorControl</a></li>
+<li><a class="" href="#ARDOUR:MonitorProcessor">ARDOUR:MonitorProcessor</a></li>
+<li><a class="" href="#ARDOUR:MusicSample">ARDOUR:MusicSample</a></li>
+<li><a class="" href="#ARDOUR:MuteControl">ARDOUR:MuteControl</a></li>
+<li><a class="" href="#ARDOUR:NotePtrList">ARDOUR:NotePtrList</a></li>
+<li><a class="" href="#ARDOUR:OwnedPropertyList">ARDOUR:OwnedPropertyList</a></li>
+<li><a class="" href="#ARDOUR:PDC">ARDOUR:PDC</a></li>
+<li><a class="" href="#ARDOUR:PannerShell">ARDOUR:PannerShell</a></li>
+<li><a class="" href="#ARDOUR:ParameterDescriptor">ARDOUR:ParameterDescriptor</a></li>
+<li><a class="" href="#ARDOUR:ParameterList">ARDOUR:ParameterList</a></li>
+<li><a class="" href="#ARDOUR:PeakMeter">ARDOUR:PeakMeter</a></li>
+<li><a class="" href="#ARDOUR:PhaseControl">ARDOUR:PhaseControl</a></li>
+<li><a class="" href="#ARDOUR:Playlist">ARDOUR:Playlist</a></li>
+<li><a class="" href="#ARDOUR:PlaylistList">ARDOUR:PlaylistList</a></li>
+<li><a class="" href="#ARDOUR:Plugin">ARDOUR:Plugin</a></li>
+<li><a class="" href="#ARDOUR:Plugin:IOPortDescription">ARDOUR:Plugin:IOPortDescription</a></li>
+<li><a class="" href="#ARDOUR:PluginControl">ARDOUR:PluginControl</a></li>
+<li><a class="" href="#ARDOUR:PluginInfo">ARDOUR:PluginInfo</a></li>
+<li><a class="" href="#ARDOUR:PluginInfoList">ARDOUR:PluginInfoList</a></li>
+<li><a class="" href="#ARDOUR:PluginInsert">ARDOUR:PluginInsert</a></li>
+<li><a class="" href="#ARDOUR:PluginType">ARDOUR.PluginType</a></li>
+<li><a class="" href="#ARDOUR:PolarityProcessor">ARDOUR:PolarityProcessor</a></li>
+<li><a class="" href="#ARDOUR:Port">ARDOUR:Port</a></li>
+<li><a class="" href="#ARDOUR:PortEngine">ARDOUR:PortEngine</a></li>
+<li><a class="" href="#ARDOUR:PortList">ARDOUR:PortList</a></li>
+<li><a class="" href="#ARDOUR:PortManager">ARDOUR:PortManager</a></li>
+<li><a class="" href="#ARDOUR:PortSet">ARDOUR:PortSet</a></li>
+<li><a class="" href="#ARDOUR:PresentationInfo">ARDOUR:PresentationInfo</a></li>
+<li><a class="" href="#ARDOUR:PresetRecord">ARDOUR:PresetRecord</a></li>
+<li><a class="" href="#ARDOUR:PresetVector">ARDOUR:PresetVector</a></li>
+<li><a class="" href="#ARDOUR:Processor">ARDOUR:Processor</a></li>
+<li><a class="" href="#ARDOUR:ProcessorList">ARDOUR:ProcessorList</a></li>
+<li><a class="" href="#ARDOUR:ProcessorVector">ARDOUR:ProcessorVector</a></li>
+<li><a class="" href="#ARDOUR:Progress">ARDOUR:Progress</a></li>
+<li><a class="" href="#ARDOUR:Properties:BoolProperty">ARDOUR:Properties:BoolProperty</a></li>
+<li><a class="" href="#ARDOUR:Properties:FloatProperty">ARDOUR:Properties:FloatProperty</a></li>
+<li><a class="" href="#ARDOUR:Properties:SampleposProperty">ARDOUR:Properties:SampleposProperty</a></li>
+<li><a class="" href="#ARDOUR:PropertyChange">ARDOUR:PropertyChange</a></li>
+<li><a class="" href="#ARDOUR:PropertyList">ARDOUR:PropertyList</a></li>
+<li><a class="" href="#ARDOUR:RCConfiguration">ARDOUR:RCConfiguration</a></li>
+<li><a class="" href="#ARDOUR:RawMidiParser">ARDOUR:RawMidiParser</a></li>
+<li><a class="" href="#ARDOUR:ReadOnlyControl">ARDOUR:ReadOnlyControl</a></li>
+<li><a class="" href="#ARDOUR:Readable">ARDOUR:Readable</a></li>
+<li><a class="" href="#ARDOUR:ReadableList">ARDOUR:ReadableList</a></li>
+<li><a class="" href="#ARDOUR:Region">ARDOUR:Region</a></li>
+<li><a class="" href="#ARDOUR:RegionFactory">ARDOUR:RegionFactory</a></li>
+<li><a class="" href="#ARDOUR:RegionList">ARDOUR:RegionList</a></li>
+<li><a class="" href="#ARDOUR:RegionListPtr">ARDOUR:RegionListPtr</a></li>
+<li><a class="" href="#ARDOUR:RegionMap">ARDOUR:RegionMap</a></li>
+<li><a class="" href="#ARDOUR:RegionVector">ARDOUR:RegionVector</a></li>
+<li><a class="" href="#ARDOUR:Return">ARDOUR:Return</a></li>
+<li><a class="" href="#ARDOUR:Route">ARDOUR:Route</a></li>
+<li><a class="" href="#ARDOUR:Route:ProcessorStreams">ARDOUR:Route:ProcessorStreams</a></li>
+<li><a class="" href="#ARDOUR:RouteGroup">ARDOUR:RouteGroup</a></li>
+<li><a class="" href="#ARDOUR:RouteGroupList">ARDOUR:RouteGroupList</a></li>
+<li><a class="" href="#ARDOUR:RouteList">ARDOUR:RouteList</a></li>
+<li><a class="" href="#ARDOUR:RouteListPtr">ARDOUR:RouteListPtr</a></li>
+<li><a class="" href="#ARDOUR:Send">ARDOUR:Send</a></li>
+<li><a class="" href="#ARDOUR:Session">ARDOUR:Session</a></li>
+<li><a class="" href="#ARDOUR:SessionConfiguration">ARDOUR:SessionConfiguration</a></li>
+<li><a class="" href="#ARDOUR:SessionObject">ARDOUR:SessionObject</a></li>
+<li><a class="" href="#ARDOUR:SessionObjectPtr">ARDOUR:SessionObjectPtr</a></li>
+<li><a class="" href="#ARDOUR:SessionPlaylists">ARDOUR:SessionPlaylists</a></li>
+<li><a class="" href="#ARDOUR:SideChain">ARDOUR:SideChain</a></li>
+<li><a class="" href="#ARDOUR:Slavable">ARDOUR:Slavable</a></li>
+<li><a class="" href="#ARDOUR:SlavableAutomationControl">ARDOUR:SlavableAutomationControl</a></li>
+<li><a class="" href="#ARDOUR:SoloControl">ARDOUR:SoloControl</a></li>
+<li><a class="" href="#ARDOUR:SoloIsolateControl">ARDOUR:SoloIsolateControl</a></li>
+<li><a class="" href="#ARDOUR:SoloSafeControl">ARDOUR:SoloSafeControl</a></li>
+<li><a class="" href="#ARDOUR:Source">ARDOUR:Source</a></li>
+<li><a class="" href="#ARDOUR:SourceList">ARDOUR:SourceList</a></li>
+<li><a class="" href="#ARDOUR:Stripable">ARDOUR:Stripable</a></li>
+<li><a class="" href="#ARDOUR:StripableList">ARDOUR:StripableList</a></li>
+<li><a class="" href="#ARDOUR:Tempo">ARDOUR:Tempo</a></li>
+<li><a class="" href="#ARDOUR:TempoMap">ARDOUR:TempoMap</a></li>
+<li><a class="" href="#ARDOUR:TempoSection">ARDOUR:TempoSection</a></li>
+<li><a class="" href="#ARDOUR:Track">ARDOUR:Track</a></li>
+<li><a class="" href="#ARDOUR:UnknownProcessor">ARDOUR:UnknownProcessor</a></li>
+<li><a class="" href="#ARDOUR:UserBundle">ARDOUR:UserBundle</a></li>
+<li><a class="" href="#ARDOUR:VCA">ARDOUR:VCA</a></li>
+<li><a class="" href="#ARDOUR:VCAList">ARDOUR:VCAList</a></li>
+<li><a class="" href="#ARDOUR:VCAManager">ARDOUR:VCAManager</a></li>
+<li><a class="" href="#ARDOUR:VCAVector">ARDOUR:VCAVector</a></li>
+<li><a class="" href="#ARDOUR:WeakAudioSourceList">ARDOUR:WeakAudioSourceList</a></li>
+<li><a class="" href="#ARDOUR:WeakRouteList">ARDOUR:WeakRouteList</a></li>
+<li><a class="" href="#ARDOUR:WeakSourceList">ARDOUR:WeakSourceList</a></li>
+<li><a class="" href="#ARDOUR:XrunPositions">ARDOUR:XrunPositions</a></li>
+<li><a class="" href="#ArdourUI">ArdourUI</a></li>
+<li><a class="" href="#ArdourUI:ArdourMarker">ArdourUI:ArdourMarker</a></li>
+<li><a class="" href="#ArdourUI:ArdourMarkerList">ArdourUI:ArdourMarkerList</a></li>
+<li><a class="" href="#ArdourUI:AxisView">ArdourUI:AxisView</a></li>
+<li><a class="" href="#ArdourUI:Editor">ArdourUI:Editor</a></li>
+<li><a class="" href="#ArdourUI:MarkerSelection">ArdourUI:MarkerSelection</a></li>
+<li><a class="" href="#ArdourUI:RegionSelection">ArdourUI:RegionSelection</a></li>
+<li><a class="" href="#ArdourUI:RegionView">ArdourUI:RegionView</a></li>
+<li><a class="" href="#ArdourUI:RouteTimeAxisView">ArdourUI:RouteTimeAxisView</a></li>
+<li><a class="" href="#ArdourUI:RouteUI">ArdourUI:RouteUI</a></li>
+<li><a class="" href="#ArdourUI:Selectable">ArdourUI:Selectable</a></li>
+<li><a class="" href="#ArdourUI:Selection">ArdourUI:Selection</a></li>
+<li><a class="" href="#ArdourUI:SelectionList">ArdourUI:SelectionList</a></li>
+<li><a class="" href="#ArdourUI:StripableTimeAxisView">ArdourUI:StripableTimeAxisView</a></li>
+<li><a class="" href="#ArdourUI:TimeAxisView">ArdourUI:TimeAxisView</a></li>
+<li><a class="" href="#ArdourUI:TimeAxisViewItem">ArdourUI:TimeAxisViewItem</a></li>
+<li><a class="" href="#ArdourUI:TimeSelection">ArdourUI:TimeSelection</a></li>
+<li><a class="" href="#ArdourUI:TrackSelection">ArdourUI:TrackSelection</a></li>
+<li><a class="" href="#ArdourUI:TrackViewList">ArdourUI:TrackViewList</a></li>
+<li><a class="" href="#ArdourUI:TrackViewStdList">ArdourUI:TrackViewStdList</a></li>
+<li><a class="" href="#ArdourUI:UIConfiguration">ArdourUI:UIConfiguration</a></li>
+<li><a class="" href="#C:ByteArray">C:ByteArray</a></li>
+<li><a class="" href="#C:ByteVector">C:ByteVector</a></li>
+<li><a class="" href="#C:DoubleArray">C:DoubleArray</a></li>
+<li><a class="" href="#C:DoubleVector">C:DoubleVector</a></li>
+<li><a class="" href="#C:FloatArray">C:FloatArray</a></li>
+<li><a class="" href="#C:FloatArrayVector">C:FloatArrayVector</a></li>
+<li><a class="" href="#C:FloatVector">C:FloatVector</a></li>
+<li><a class="" href="#C:Int64List">C:Int64List</a></li>
+<li><a class="" href="#C:IntArray">C:IntArray</a></li>
+<li><a class="" href="#C:StringList">C:StringList</a></li>
+<li><a class="" href="#C:StringVector">C:StringVector</a></li>
+<li><a class="" href="#Cairo:Context">Cairo:Context</a></li>
+<li><a class="" href="#Cairo:ImageSurface">Cairo:ImageSurface</a></li>
+<li><a class="" href="#Cairo:PangoLayout">Cairo:PangoLayout</a></li>
+<li><a class="" href="#Evoral:Beats">Evoral:Beats</a></li>
+<li><a class="" href="#Evoral:Control">Evoral:Control</a></li>
+<li><a class="" href="#Evoral:ControlEvent">Evoral:ControlEvent</a></li>
+<li><a class="" href="#Evoral:ControlList">Evoral:ControlList</a></li>
+<li><a class="" href="#Evoral:ControlSet">Evoral:ControlSet</a></li>
+<li><a class="" href="#Evoral:Event">Evoral:Event</a></li>
+<li><a class="" href="#Evoral:NotePtr">Evoral:NotePtr</a></li>
+<li><a class="" href="#Evoral:Parameter">Evoral:Parameter</a></li>
+<li><a class="" href="#Evoral:ParameterDescriptor">Evoral:ParameterDescriptor</a></li>
+<li><a class="" href="#Evoral:Range">Evoral:Range</a></li>
+<li><a class="" href="#Evoral:Sequence">Evoral:Sequence</a></li>
+<li><a class="" href="#LuaDialog:Dialog">LuaDialog:Dialog</a></li>
+<li><a class="" href="#LuaDialog:Message">LuaDialog:Message</a></li>
+<li><a class="" href="#LuaDialog:ProgressWindow">LuaDialog:ProgressWindow</a></li>
+<li><a class="" href="#LuaSignal:Set">LuaSignal:Set</a></li>
+<li><a class="" href="#PBD">PBD</a></li>
+<li><a class="" href="#PBD:Command">PBD:Command</a></li>
+<li><a class="" href="#PBD:Configuration">PBD:Configuration</a></li>
+<li><a class="" href="#PBD:Controllable">PBD:Controllable</a></li>
+<li><a class="" href="#PBD:ID">PBD:ID</a></li>
+<li><a class="" href="#PBD:IdVector">PBD:IdVector</a></li>
+<li><a class="" href="#PBD:RingBuffer8">PBD:RingBuffer8</a></li>
+<li><a class="" href="#PBD:RingBufferF">PBD:RingBufferF</a></li>
+<li><a class="" href="#PBD:RingBufferI">PBD:RingBufferI</a></li>
+<li><a class="" href="#PBD:Stateful">PBD:Stateful</a></li>
+<li><a class="" href="#PBD:StatefulDestructible">PBD:StatefulDestructible</a></li>
+<li><a class="" href="#PBD:StatefulDestructiblePtr">PBD:StatefulDestructiblePtr</a></li>
+<li><a class="" href="#PBD:StatefulDiffCommand">PBD:StatefulDiffCommand</a></li>
+<li><a class="" href="#PBD:StatefulPtr">PBD:StatefulPtr</a></li>
+<li><a class="" href="#PBD:XMLNode">PBD:XMLNode</a></li>
+<li><a class="" href="#Timecode:BBT_TIME">Timecode:BBT_TIME</a></li>
+<li><a class="" href="#Timecode:Time">Timecode:Time</a></li>
+<li><a class="" href="#Vamp:Plugin">Vamp:Plugin</a></li>
+<li><a class="" href="#Vamp:Plugin:Feature">Vamp:Plugin:Feature</a></li>
+<li><a class="" href="#Vamp:Plugin:FeatureList">Vamp:Plugin:FeatureList</a></li>
+<li><a class="" href="#Vamp:Plugin:FeatureSet">Vamp:Plugin:FeatureSet</a></li>
+<li><a class="" href="#Vamp:Plugin:OutputDescriptor">Vamp:Plugin:OutputDescriptor</a></li>
+<li><a class="" href="#Vamp:Plugin:OutputList">Vamp:Plugin:OutputList</a></li>
+<li><a class="" href="#Vamp:PluginBase">Vamp:PluginBase</a></li>
+<li><a class="" href="#Vamp:PluginBase:ParameterDescriptor">Vamp:PluginBase:ParameterDescriptor</a></li>
+<li><a class="" href="#Vamp:PluginBase:ParameterList">Vamp:PluginBase:ParameterList</a></li>
+<li><a class="" href="#Vamp:RealTime">Vamp:RealTime</a></li>
+<li><a class="" href="#os">os</a></li>
+</ul>
+
 
 
 <h2 id="h_classes">Class Documentation</h2>
@@ -7860,962 +8820,7 @@ Pointer Classes cannot be created in Lua scripts. It always requires a call to C
  <tr><td class="def"><span class="em">int</span></td><td class="decl"><span class="functionname"><abbr title="int (*)(std::string)">execute</abbr></span><span class="functionargs"> (<span class="em">std::string</span>)</span></td><td class="fill"></td></tr>
  <tr><td class="def"><span class="em">LuaTable</span></td><td class="decl"><span class="functionname"><abbr title="int (*)(lua_State*) const">forkexec</abbr></span><span class="functionargs"> ()</span></td><td class="fill"></td></tr>
  </table>
-<h2 id="h_enum">Enum/Constants</h2>
-<h3 id="PBD.Controllable.GroupControlDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;PBD.Controllable.GroupControlDisposition</h3>
-<ul class="enum">
-<li class="const">PBD.GroupControlDisposition.InverseGroup</li>
-<li class="const">PBD.GroupControlDisposition.NoGroup</li>
-<li class="const">PBD.GroupControlDisposition.UseGroup</li>
-</ul>
-<h3 id="Timecode.TimecodeFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Timecode.TimecodeFormat</h3>
-<ul class="enum">
-<li class="const">Timecode.TimecodeFormat.TC23976</li>
-<li class="const">Timecode.TimecodeFormat.TC24</li>
-<li class="const">Timecode.TimecodeFormat.TC24976</li>
-<li class="const">Timecode.TimecodeFormat.TC25</li>
-<li class="const">Timecode.TimecodeFormat.TC2997</li>
-<li class="const">Timecode.TimecodeFormat.TC2997DF</li>
-<li class="const">Timecode.TimecodeFormat.TC2997000</li>
-<li class="const">Timecode.TimecodeFormat.TC2997000DF</li>
-<li class="const">Timecode.TimecodeFormat.TC30</li>
-<li class="const">Timecode.TimecodeFormat.TC5994</li>
-<li class="const">Timecode.TimecodeFormat.TC60</li>
-</ul>
-<h3 id="Evoral.ControlList.InterpolationStyle" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Evoral.ControlList.InterpolationStyle</h3>
-<ul class="enum">
-<li class="const">Evoral.InterpolationStyle.Discrete</li>
-<li class="const">Evoral.InterpolationStyle.Linear</li>
-<li class="const">Evoral.InterpolationStyle.Curved</li>
-</ul>
-<h3 id="Evoral.EventType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Evoral.EventType</h3>
-<ul class="enum">
-<li class="const">Evoral.EventType.NO_EVENT</li>
-<li class="const">Evoral.EventType.MIDI_EVENT</li>
-<li class="const">Evoral.EventType.LIVE_MIDI_EVENT</li>
-</ul>
-<h3 id="Vamp.Plugin.InputDomain" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Vamp.Plugin.InputDomain</h3>
-<ul class="enum">
-<li class="const">Vamp.Plugin.InputDomain.TimeDomain</li>
-<li class="const">Vamp.Plugin.InputDomain.FrequencyDomain</li>
-</ul>
-<h3 id="Vamp.Plugin.OutputDescriptor.SampleType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Vamp.Plugin.OutputDescriptor.SampleType</h3>
-<ul class="enum">
-<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.OneSamplePerStep</li>
-<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.FixedSampleRate</li>
-<li class="const">Vamp.Plugin.OutputDescriptor.SampleType.VariableSampleRate</li>
-</ul>
-<h3 id="ARDOUR" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR</h3>
-<ul class="enum">
-<li class="const">ARDOUR.revision</li>
-</ul>
-<h3 id="ARDOUR.ChanMapping" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ChanMapping</h3>
-<ul class="enum">
-<li class="const">ARDOUR.ChanMapping.Invalid</li>
-</ul>
-<h3 id="PBD.PropertyDescriptor&lt;long&gt;*" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;PBD.PropertyDescriptor&lt;long&gt;*</h3>
-<ul class="enum">
-<li class="const">ARDOUR.Properties.Start</li>
-<li class="const">ARDOUR.Properties.Length</li>
-<li class="const">ARDOUR.Properties.Position</li>
-</ul>
-<h3 id="ARDOUR.PresentationInfo" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PresentationInfo</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PresentationInfo.max_order</li>
-</ul>
-<h3 id="ARDOUR.PluginType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PluginType</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PluginType.AudioUnit</li>
-<li class="const">ARDOUR.PluginType.LADSPA</li>
-<li class="const">ARDOUR.PluginType.LV2</li>
-<li class="const">ARDOUR.PluginType.Windows_VST</li>
-<li class="const">ARDOUR.PluginType.LXVST</li>
-<li class="const">ARDOUR.PluginType.MacVST</li>
-<li class="const">ARDOUR.PluginType.Lua</li>
-<li class="const">ARDOUR.PluginType.VST3</li>
-</ul>
-<h3 id="ARDOUR.PresentationInfo.Flag" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PresentationInfo.Flag</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PresentationInfo.Flag.AudioTrack</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.MidiTrack</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.AudioBus</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.MidiBus</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.VCA</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.MasterOut</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.MonitorOut</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.Auditioner</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.Hidden</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.GroupOrderSet</li>
-<li class="const">ARDOUR.PresentationInfo.Flag.StatusMask</li>
-</ul>
-<h3 id="ARDOUR.AutoState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoState</h3>
-<ul class="enum">
-<li class="const">ARDOUR.AutoState.Off</li>
-<li class="const">ARDOUR.AutoState.Write</li>
-<li class="const">ARDOUR.AutoState.Touch</li>
-<li class="const">ARDOUR.AutoState.Play</li>
-<li class="const">ARDOUR.AutoState.Latch</li>
-</ul>
-<h3 id="ARDOUR.AutomationType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutomationType</h3>
-<ul class="enum">
-<li class="const">ARDOUR.AutomationType.GainAutomation</li>
-<li class="const">ARDOUR.AutomationType.BusSendLevel</li>
-<li class="const">ARDOUR.AutomationType.PluginAutomation</li>
-<li class="const">ARDOUR.AutomationType.SoloAutomation</li>
-<li class="const">ARDOUR.AutomationType.SoloIsolateAutomation</li>
-<li class="const">ARDOUR.AutomationType.SoloSafeAutomation</li>
-<li class="const">ARDOUR.AutomationType.MuteAutomation</li>
-<li class="const">ARDOUR.AutomationType.RecEnableAutomation</li>
-<li class="const">ARDOUR.AutomationType.RecSafeAutomation</li>
-<li class="const">ARDOUR.AutomationType.TrimAutomation</li>
-<li class="const">ARDOUR.AutomationType.PhaseAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiCCAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiPgmChangeAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiPitchBenderAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiChannelPressureAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiNotePressureAutomation</li>
-<li class="const">ARDOUR.AutomationType.MidiSystemExclusiveAutomation</li>
-</ul>
-<h3 id="ARDOUR.SrcQuality" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SrcQuality</h3>
-<ul class="enum">
-<li class="const">ARDOUR.SrcQuality.SrcBest</li>
-</ul>
-<h3 id="ARDOUR.MeterType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterType</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MeterType.MeterMaxSignal</li>
-<li class="const">ARDOUR.MeterType.MeterMaxPeak</li>
-<li class="const">ARDOUR.MeterType.MeterPeak</li>
-<li class="const">ARDOUR.MeterType.MeterKrms</li>
-<li class="const">ARDOUR.MeterType.MeterK20</li>
-<li class="const">ARDOUR.MeterType.MeterK14</li>
-<li class="const">ARDOUR.MeterType.MeterIEC1DIN</li>
-<li class="const">ARDOUR.MeterType.MeterIEC1NOR</li>
-<li class="const">ARDOUR.MeterType.MeterIEC2BBC</li>
-<li class="const">ARDOUR.MeterType.MeterIEC2EBU</li>
-<li class="const">ARDOUR.MeterType.MeterVU</li>
-<li class="const">ARDOUR.MeterType.MeterK12</li>
-<li class="const">ARDOUR.MeterType.MeterPeak0dB</li>
-<li class="const">ARDOUR.MeterType.MeterMCP</li>
-</ul>
-<h3 id="ARDOUR.MeterPoint" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterPoint</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MeterPoint.MeterInput</li>
-<li class="const">ARDOUR.MeterPoint.MeterPreFader</li>
-<li class="const">ARDOUR.MeterPoint.MeterPostFader</li>
-<li class="const">ARDOUR.MeterPoint.MeterOutput</li>
-<li class="const">ARDOUR.MeterPoint.MeterCustom</li>
-</ul>
-<h3 id="ARDOUR.Placement" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Placement</h3>
-<ul class="enum">
-<li class="const">ARDOUR.Placement.PreFader</li>
-<li class="const">ARDOUR.Placement.PostFader</li>
-</ul>
-<h3 id="ARDOUR.MonitorChoice" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorChoice</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MonitorChoice.MonitorAuto</li>
-<li class="const">ARDOUR.MonitorChoice.MonitorInput</li>
-<li class="const">ARDOUR.MonitorChoice.MonitorDisk</li>
-<li class="const">ARDOUR.MonitorChoice.MonitorCue</li>
-</ul>
-<h3 id="ARDOUR.MonitorState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorState</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MonitorState.MonitoringSilence</li>
-<li class="const">ARDOUR.MonitorState.MonitoringInput</li>
-<li class="const">ARDOUR.MonitorState.MonitoringDisk</li>
-<li class="const">ARDOUR.MonitorState.MonitoringCue</li>
-</ul>
-<h3 id="ARDOUR.NoteMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.NoteMode</h3>
-<ul class="enum">
-<li class="const">ARDOUR.NoteMode.Sustained</li>
-<li class="const">ARDOUR.NoteMode.Percussive</li>
-</ul>
-<h3 id="ARDOUR.PortFlags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PortFlags</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PortFlags.IsInput</li>
-<li class="const">ARDOUR.PortFlags.IsOutput</li>
-<li class="const">ARDOUR.PortFlags.IsPhysical</li>
-<li class="const">ARDOUR.PortFlags.CanMonitor</li>
-<li class="const">ARDOUR.PortFlags.IsTerminal</li>
-</ul>
-<h3 id="ARDOUR.MidiPortFlags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiPortFlags</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MidiPortFlags.MidiPortMusic</li>
-<li class="const">ARDOUR.MidiPortFlags.MidiPortControl</li>
-<li class="const">ARDOUR.MidiPortFlags.MidiPortSelection</li>
-<li class="const">ARDOUR.MidiPortFlags.MidiPortVirtual</li>
-</ul>
-<h3 id="ARDOUR.PlaylistDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PlaylistDisposition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PlaylistDisposition.CopyPlaylist</li>
-<li class="const">ARDOUR.PlaylistDisposition.NewPlaylist</li>
-<li class="const">ARDOUR.PlaylistDisposition.SharePlaylist</li>
-</ul>
-<h3 id="ARDOUR.MidiTrackNameSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiTrackNameSource</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MidiTrackNameSource.SMFTrackNumber</li>
-<li class="const">ARDOUR.MidiTrackNameSource.SMFTrackName</li>
-<li class="const">ARDOUR.MidiTrackNameSource.SMFInstrumentName</li>
-</ul>
-<h3 id="ARDOUR.MidiTempoMapDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MidiTempoMapDisposition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MidiTempoMapDisposition.SMFTempoIgnore</li>
-<li class="const">ARDOUR.MidiTempoMapDisposition.SMFTempoUse</li>
-</ul>
-<h3 id="ARDOUR.RegionEquivalence" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionEquivalence</h3>
-<ul class="enum">
-<li class="const">ARDOUR.RegionEquivalence.Exact</li>
-<li class="const">ARDOUR.RegionEquivalence.Enclosed</li>
-<li class="const">ARDOUR.RegionEquivalence.Overlap</li>
-<li class="const">ARDOUR.RegionEquivalence.LayerTime</li>
-</ul>
-<h3 id="ARDOUR.RegionPoint" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionPoint</h3>
-<ul class="enum">
-<li class="const">ARDOUR.RegionPoint.Start</li>
-<li class="const">ARDOUR.RegionPoint.End</li>
-<li class="const">ARDOUR.RegionPoint.SyncPoint</li>
-</ul>
-<h3 id="ARDOUR.PositionLockStyle" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PositionLockStyle</h3>
-<ul class="enum">
-<li class="const">ARDOUR.TempoSection.PositionLockStyle.AudioTime</li>
-<li class="const">ARDOUR.TempoSection.PositionLockStyle.MusicTime</li>
-</ul>
-<h3 id="ARDOUR.TempoSection.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TempoSection.Type</h3>
-<ul class="enum">
-<li class="const">ARDOUR.TempoSection.Type.Ramp</li>
-<li class="const">ARDOUR.TempoSection.Type.Constant</li>
-</ul>
-<h3 id="ARDOUR.TrackMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TrackMode</h3>
-<ul class="enum">
-<li class="const">ARDOUR.TrackMode.Normal</li>
-<li class="const">ARDOUR.TrackMode.NonLayered</li>
-</ul>
-<h3 id="ARDOUR.TransportRequestSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TransportRequestSource</h3>
-<ul class="enum">
-<li class="const">ARDOUR.TransportRequestSource.TRS_Engine</li>
-<li class="const">ARDOUR.TransportRequestSource.TRS_UI</li>
-</ul>
-<h3 id="ARDOUR.LocateTransportDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LocateTransportDisposition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.LocateTransportDisposition.MustRoll</li>
-<li class="const">ARDOUR.LocateTransportDisposition.MustStop</li>
-<li class="const">ARDOUR.LocateTransportDisposition.RollIfAppropriate</li>
-</ul>
-<h3 id="ARDOUR.SampleFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SampleFormat</h3>
-<ul class="enum">
-<li class="const">ARDOUR.SampleFormat.Float</li>
-<li class="const">ARDOUR.SampleFormat.Int24</li>
-<li class="const">ARDOUR.SampleFormat.Int16</li>
-</ul>
-<h3 id="ARDOUR.HeaderFormat" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.HeaderFormat</h3>
-<ul class="enum">
-<li class="const">ARDOUR.HeaderFormat.BWF</li>
-<li class="const">ARDOUR.HeaderFormat.WAVE</li>
-<li class="const">ARDOUR.HeaderFormat.WAVE64</li>
-<li class="const">ARDOUR.HeaderFormat.CAF</li>
-<li class="const">ARDOUR.HeaderFormat.AIFF</li>
-<li class="const">ARDOUR.HeaderFormat.iXML</li>
-<li class="const">ARDOUR.HeaderFormat.RF64</li>
-<li class="const">ARDOUR.HeaderFormat.RF64_WAV</li>
-<li class="const">ARDOUR.HeaderFormat.MBWF</li>
-<li class="const">ARDOUR.HeaderFormat.FLAC</li>
-</ul>
-<h3 id="ARDOUR.InsertMergePolicy" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.InsertMergePolicy</h3>
-<ul class="enum">
-<li class="const">ARDOUR.InsertMergePolicy.Reject</li>
-<li class="const">ARDOUR.InsertMergePolicy.Relax</li>
-<li class="const">ARDOUR.InsertMergePolicy.Replace</li>
-<li class="const">ARDOUR.InsertMergePolicy.TruncateExisting</li>
-<li class="const">ARDOUR.InsertMergePolicy.TruncateAddition</li>
-<li class="const">ARDOUR.InsertMergePolicy.Extend</li>
-</ul>
-<h3 id="ARDOUR.AFLPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AFLPosition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.AFLPosition.AFLFromBeforeProcessors</li>
-<li class="const">ARDOUR.AFLPosition.AFLFromAfterProcessors</li>
-</ul>
-<h3 id="ARDOUR.PFLPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.PFLPosition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.PFLPosition.PFLFromBeforeProcessors</li>
-<li class="const">ARDOUR.PFLPosition.PFLFromAfterProcessors</li>
-</ul>
-<h3 id="ARDOUR.AutoReturnTarget" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoReturnTarget</h3>
-<ul class="enum">
-<li class="const">ARDOUR.AutoReturnTarget.LastLocate</li>
-<li class="const">ARDOUR.AutoReturnTarget.RangeSelectionStart</li>
-<li class="const">ARDOUR.AutoReturnTarget.Loop</li>
-<li class="const">ARDOUR.AutoReturnTarget.RegionSelectionStart</li>
-</ul>
-<h3 id="ARDOUR.FadeShape" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.FadeShape</h3>
-<ul class="enum">
-<li class="const">ARDOUR.FadeShape.FadeLinear</li>
-<li class="const">ARDOUR.FadeShape.FadeFast</li>
-<li class="const">ARDOUR.FadeShape.FadeSlow</li>
-<li class="const">ARDOUR.FadeShape.FadeConstantPower</li>
-<li class="const">ARDOUR.FadeShape.FadeSymmetric</li>
-</ul>
-<h3 id="ARDOUR.LoopFadeChoice" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LoopFadeChoice</h3>
-<ul class="enum">
-<li class="const">ARDOUR.LoopFadeChoice.NoLoopFade</li>
-<li class="const">ARDOUR.LoopFadeChoice.EndLoopFade</li>
-<li class="const">ARDOUR.LoopFadeChoice.BothLoopFade</li>
-<li class="const">ARDOUR.LoopFadeChoice.XFadeLoop</li>
-</ul>
-<h3 id="ARDOUR.DenormalModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DenormalModel</h3>
-<ul class="enum">
-<li class="const">ARDOUR.DenormalModel.DenormalNone</li>
-<li class="const">ARDOUR.DenormalModel.DenormalFTZ</li>
-<li class="const">ARDOUR.DenormalModel.DenormalDAZ</li>
-<li class="const">ARDOUR.DenormalModel.DenormalFTZDAZ</li>
-</ul>
-<h3 id="ARDOUR.BufferingPreset" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.BufferingPreset</h3>
-<ul class="enum">
-<li class="const">ARDOUR.BufferingPreset.Small</li>
-<li class="const">ARDOUR.BufferingPreset.Medium</li>
-<li class="const">ARDOUR.BufferingPreset.Large</li>
-<li class="const">ARDOUR.BufferingPreset.Custom</li>
-</ul>
-<h3 id="ARDOUR.EditMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.EditMode</h3>
-<ul class="enum">
-<li class="const">ARDOUR.EditMode.Slide</li>
-<li class="const">ARDOUR.EditMode.Splice</li>
-<li class="const">ARDOUR.EditMode.Ripple</li>
-<li class="const">ARDOUR.EditMode.Lock</li>
-</ul>
-<h3 id="ARDOUR.AutoConnectOption" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.AutoConnectOption</h3>
-<ul class="enum">
-<li class="const">ARDOUR.AutoConnectOption.ManualConnect</li>
-<li class="const">ARDOUR.AutoConnectOption.AutoConnectPhysical</li>
-<li class="const">ARDOUR.AutoConnectOption.AutoConnectMaster</li>
-</ul>
-<h3 id="ARDOUR.LayerModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.LayerModel</h3>
-<ul class="enum">
-<li class="const">ARDOUR.LayerModel.LaterHigher</li>
-<li class="const">ARDOUR.LayerModel.Manual</li>
-</ul>
-<h3 id="ARDOUR.ListenPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ListenPosition</h3>
-<ul class="enum">
-<li class="const">ARDOUR.ListenPosition.AfterFaderListen</li>
-<li class="const">ARDOUR.ListenPosition.PreFaderListen</li>
-</ul>
-<h3 id="ARDOUR.MonitorModel" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MonitorModel</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MonitorModel.HardwareMonitoring</li>
-<li class="const">ARDOUR.MonitorModel.SoftwareMonitoring</li>
-<li class="const">ARDOUR.MonitorModel.ExternalMonitoring</li>
-</ul>
-<h3 id="ARDOUR.RegionSelectionAfterSplit" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RegionSelectionAfterSplit</h3>
-<ul class="enum">
-<li class="const">ARDOUR.RegionSelectionAfterSplit.None</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedLeft</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedRight</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.NewlyCreatedBoth</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.Existing</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedLeft</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedRight</li>
-<li class="const">ARDOUR.RegionSelectionAfterSplit.ExistingNewlyCreatedBoth</li>
-</ul>
-<h3 id="ARDOUR.RangeSelectionAfterSplit" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.RangeSelectionAfterSplit</h3>
-<ul class="enum">
-<li class="const">ARDOUR.RangeSelectionAfterSplit.ClearSel</li>
-<li class="const">ARDOUR.RangeSelectionAfterSplit.PreserveSel</li>
-<li class="const">ARDOUR.RangeSelectionAfterSplit.ForceSel</li>
-</ul>
-<h3 id="ARDOUR.ScreenSaverMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ScreenSaverMode</h3>
-<ul class="enum">
-<li class="const">ARDOUR.ScreenSaverMode.InhibitNever</li>
-<li class="const">ARDOUR.ScreenSaverMode.InhibitWhileRecording</li>
-<li class="const">ARDOUR.ScreenSaverMode.InhibitAlways</li>
-</ul>
-<h3 id="ARDOUR.ClockDeltaMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ClockDeltaMode</h3>
-<ul class="enum">
-<li class="const">ARDOUR.ClockDeltaMode.NoDelta</li>
-<li class="const">ARDOUR.ClockDeltaMode.DeltaEditPoint</li>
-<li class="const">ARDOUR.ClockDeltaMode.DeltaOriginMarker</li>
-</ul>
-<h3 id="ARDOUR.WaveformScale" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.WaveformScale</h3>
-<ul class="enum">
-<li class="const">ARDOUR.WaveformScale.Linear</li>
-<li class="const">ARDOUR.WaveformScale.Logarithmic</li>
-</ul>
-<h3 id="ARDOUR.WaveformShape" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.WaveformShape</h3>
-<ul class="enum">
-<li class="const">ARDOUR.WaveformShape.Traditional</li>
-<li class="const">ARDOUR.WaveformShape.Rectified</li>
-</ul>
-<h3 id="ARDOUR.MeterLineUp" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.MeterLineUp</h3>
-<ul class="enum">
-<li class="const">ARDOUR.MeterLineUp.MeteringLineUp24</li>
-<li class="const">ARDOUR.MeterLineUp.MeteringLineUp20</li>
-<li class="const">ARDOUR.MeterLineUp.MeteringLineUp18</li>
-<li class="const">ARDOUR.MeterLineUp.MeteringLineUp15</li>
-<li class="const">ARDOUR.InputMeterLayout.MeteringLineUp15</li>
-</ul>
-<h3 id="ARDOUR.InputMeterLayout" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.InputMeterLayout</h3>
-<ul class="enum">
-<li class="const">ARDOUR.InputMeterLayout.LayoutVertical</li>
-<li class="const">ARDOUR.InputMeterLayout.LayoutHorizontal</li>
-<li class="const">ARDOUR.InputMeterLayout.LayoutAutomatic</li>
-</ul>
-<h3 id="ARDOUR.VUMeterStandard" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.VUMeterStandard</h3>
-<ul class="enum">
-<li class="const">ARDOUR.VUMeterStandard.MeteringVUfrench</li>
-<li class="const">ARDOUR.VUMeterStandard.MeteringVUamerican</li>
-<li class="const">ARDOUR.VUMeterStandard.MeteringVUstandard</li>
-<li class="const">ARDOUR.VUMeterStandard.MeteringVUeight</li>
-</ul>
-<h3 id="ARDOUR.ShuttleUnits" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.ShuttleUnits</h3>
-<ul class="enum">
-<li class="const">ARDOUR.ShuttleUnits.Percentage</li>
-<li class="const">ARDOUR.ShuttleUnits.Semitones</li>
-</ul>
-<h3 id="ARDOUR.SyncSource" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.SyncSource</h3>
-<ul class="enum">
-<li class="const">ARDOUR.SyncSource.Engine</li>
-<li class="const">ARDOUR.SyncSource.MTC</li>
-<li class="const">ARDOUR.SyncSource.MIDIClock</li>
-<li class="const">ARDOUR.SyncSource.LTC</li>
-</ul>
-<h3 id="ARDOUR.TracksAutoNamingRule" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.TracksAutoNamingRule</h3>
-<ul class="enum">
-<li class="const">ARDOUR.TracksAutoNamingRule.UseDefaultNames</li>
-<li class="const">ARDOUR.TracksAutoNamingRule.NameAfterDriver</li>
-</ul>
-<h3 id="ARDOUR.Session.RecordState" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Session.RecordState</h3>
-<ul class="enum">
-<li class="const">ARDOUR.Session.RecordState.Disabled</li>
-<li class="const">ARDOUR.Session.RecordState.Enabled</li>
-<li class="const">ARDOUR.Session.RecordState.Recording</li>
-</ul>
-<h3 id="ARDOUR.Location.Flags" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.Location.Flags</h3>
-<ul class="enum">
-<li class="const">ARDOUR.LocationFlags.IsMark</li>
-<li class="const">ARDOUR.LocationFlags.IsAutoPunch</li>
-<li class="const">ARDOUR.LocationFlags.IsAutoLoop</li>
-<li class="const">ARDOUR.LocationFlags.IsHidden</li>
-<li class="const">ARDOUR.LocationFlags.IsCDMarker</li>
-<li class="const">ARDOUR.LocationFlags.IsRangeMarker</li>
-<li class="const">ARDOUR.LocationFlags.IsSessionRange</li>
-<li class="const">ARDOUR.LocationFlags.IsSkip</li>
-<li class="const">ARDOUR.LocationFlags.IsSkipping</li>
-</ul>
-<h3 id="Glib.FileTest" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Glib.FileTest</h3>
-<ul class="enum">
-<li class="const">ARDOUR.LuaAPI.FileTest.IsRegular</li>
-<li class="const">ARDOUR.LuaAPI.FileTest.IsSymlink</li>
-<li class="const">ARDOUR.LuaAPI.FileTest.IsDir</li>
-<li class="const">ARDOUR.LuaAPI.FileTest.IsExecutable</li>
-<li class="const">ARDOUR.LuaAPI.FileTest.Exists</li>
-</ul>
-<h3 id="ARDOUR.DSP.Biquad.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Biquad.Type</h3>
-<ul class="enum">
-<li class="const">ARDOUR.DSP.BiquadType.LowPass</li>
-<li class="const">ARDOUR.DSP.BiquadType.HighPass</li>
-<li class="const">ARDOUR.DSP.BiquadType.BandPassSkirt</li>
-<li class="const">ARDOUR.DSP.BiquadType.BandPass0dB</li>
-<li class="const">ARDOUR.DSP.BiquadType.Notch</li>
-<li class="const">ARDOUR.DSP.BiquadType.AllPass</li>
-<li class="const">ARDOUR.DSP.BiquadType.Peaking</li>
-<li class="const">ARDOUR.DSP.BiquadType.LowShelf</li>
-<li class="const">ARDOUR.DSP.BiquadType.HighShelf</li>
-</ul>
-<h3 id="ARDOUR.DSP.Generator.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Generator.Type</h3>
-<ul class="enum">
-<li class="const">ARDOUR.DSP.NoiseType.UniformWhiteNoise</li>
-<li class="const">ARDOUR.DSP.NoiseType.GaussianWhiteNoise</li>
-<li class="const">ARDOUR.DSP.NoiseType.PinkNoise</li>
-</ul>
-<h3 id="ARDOUR.DSP.LTC_TV_STANDARD" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.LTC_TV_STANDARD</h3>
-<ul class="enum">
-<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_525_60</li>
-<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_625_50</li>
-<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_1125_60</li>
-<li class="const">ARDOUR.DSP.LTC_TV_STANDARD.LTC_TV_FILM_24</li>
-</ul>
-<h3 id="ARDOUR.DSP.Convolver.IRChannelConfig" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ARDOUR.DSP.Convolver.IRChannelConfig</h3>
-<ul class="enum">
-<li class="const">ARDOUR.DSP.IRChannelConfig.Mono</li>
-<li class="const">ARDOUR.DSP.IRChannelConfig.MonoToStereo</li>
-<li class="const">ARDOUR.DSP.IRChannelConfig.Stereo</li>
-</ul>
-<h3 id="Cairo.LineCap" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.LineCap</h3>
-<ul class="enum">
-<li class="const">Cairo.LineCap.Butt</li>
-<li class="const">Cairo.LineCap.Round</li>
-<li class="const">Cairo.LineCap.Square</li>
-</ul>
-<h3 id="Cairo.LineJoin" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.LineJoin</h3>
-<ul class="enum">
-<li class="const">Cairo.LineJoin.Miter</li>
-<li class="const">Cairo.LineJoin.Round</li>
-<li class="const">Cairo.LineJoin.Bevel</li>
-</ul>
-<h3 id="Cairo.Operator" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.Operator</h3>
-<ul class="enum">
-<li class="const">Cairo.Operator.Clear</li>
-<li class="const">Cairo.Operator.Source</li>
-<li class="const">Cairo.Operator.Over</li>
-<li class="const">Cairo.Operator.Add</li>
-</ul>
-<h3 id="Cairo.Format" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Cairo.Format</h3>
-<ul class="enum">
-<li class="const">Cairo.Format.ARGB32</li>
-<li class="const">Cairo.Format.RGB24</li>
-</ul>
-<h3 id="Pango.EllipsizeMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.EllipsizeMode</h3>
-<ul class="enum">
-<li class="const">Cairo.EllipsizeMode.None</li>
-<li class="const">Cairo.EllipsizeMode.Start</li>
-<li class="const">Cairo.EllipsizeMode.Middle</li>
-<li class="const">Cairo.EllipsizeMode.End</li>
-</ul>
-<h3 id="Pango.Alignment" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.Alignment</h3>
-<ul class="enum">
-<li class="const">Cairo.Alignment.Left</li>
-<li class="const">Cairo.Alignment.Center</li>
-<li class="const">Cairo.Alignment.Right</li>
-</ul>
-<h3 id="Pango.WrapMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Pango.WrapMode</h3>
-<ul class="enum">
-<li class="const">Cairo.WrapMode.Word</li>
-<li class="const">Cairo.WrapMode.Char</li>
-<li class="const">Cairo.WrapMode.WordChar</li>
-</ul>
-<h3 id="LuaDialog.Message.MessageType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Message.MessageType</h3>
-<ul class="enum">
-<li class="const">LuaDialog.MessageType.Info</li>
-<li class="const">LuaDialog.MessageType.Warning</li>
-<li class="const">LuaDialog.MessageType.Question</li>
-<li class="const">LuaDialog.MessageType.Error</li>
-</ul>
-<h3 id="LuaDialog.Message.ButtonType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Message.ButtonType</h3>
-<ul class="enum">
-<li class="const">LuaDialog.ButtonType.OK</li>
-<li class="const">LuaDialog.ButtonType.Close</li>
-<li class="const">LuaDialog.ButtonType.Cancel</li>
-<li class="const">LuaDialog.ButtonType.Yes_No</li>
-<li class="const">LuaDialog.ButtonType.OK_Cancel</li>
-</ul>
-<h3 id="LuaDialog.Response" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaDialog.Response</h3>
-<ul class="enum">
-<li class="const">LuaDialog.Response.OK</li>
-<li class="const">LuaDialog.Response.Cancel</li>
-<li class="const">LuaDialog.Response.Close</li>
-<li class="const">LuaDialog.Response.Yes</li>
-<li class="const">LuaDialog.Response.No</li>
-<li class="const">LuaDialog.Response.None</li>
-</ul>
-<h3 id="RouteDialogs.InsertAt" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;RouteDialogs.InsertAt</h3>
-<ul class="enum">
-<li class="const">ArdourUI.InsertAt.BeforeSelection</li>
-<li class="const">ArdourUI.InsertAt.AfterSelection</li>
-<li class="const">ArdourUI.InsertAt.First</li>
-<li class="const">ArdourUI.InsertAt.Last</li>
-</ul>
-<h3 id="ArdourMarker.Type" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;ArdourMarker.Type</h3>
-<ul class="enum">
-<li class="const">ArdourUI.MarkerType.Mark</li>
-<li class="const">ArdourUI.MarkerType.Tempo</li>
-<li class="const">ArdourUI.MarkerType.Meter</li>
-<li class="const">ArdourUI.MarkerType.SessionStart</li>
-<li class="const">ArdourUI.MarkerType.SessionEnd</li>
-<li class="const">ArdourUI.MarkerType.RangeStart</li>
-<li class="const">ArdourUI.MarkerType.RangeEnd</li>
-<li class="const">ArdourUI.MarkerType.LoopStart</li>
-<li class="const">ArdourUI.MarkerType.LoopEnd</li>
-<li class="const">ArdourUI.MarkerType.PunchIn</li>
-<li class="const">ArdourUI.MarkerType.PunchOut</li>
-</ul>
-<h3 id="Selection.Operation" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Selection.Operation</h3>
-<ul class="enum">
-<li class="const">ArdourUI.SelectionOp.Toggle</li>
-<li class="const">ArdourUI.SelectionOp.Set</li>
-<li class="const">ArdourUI.SelectionOp.Extend</li>
-<li class="const">ArdourUI.SelectionOp.Add</li>
-</ul>
-<h3 id="TimeAxisView.TrackHeightMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;TimeAxisView.TrackHeightMode</h3>
-<ul class="enum">
-<li class="const">ArdourUI.TrackHeightMode.OnlySelf</li>
-<li class="const">ArdourUI.TrackHeightMode.TotalHeight</li>
-<li class="const">ArdourUI.TrackHeightMode.HeightPerLane,</li>
-</ul>
-<h3 id="Editing.GridType" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.GridType</h3>
-<ul class="enum">
-<li class="const">Editing.GridTypeNone</li>
-<li class="const">Editing.GridTypeBar</li>
-<li class="const">Editing.GridTypeBeat</li>
-<li class="const">Editing.GridTypeBeatDiv2</li>
-<li class="const">Editing.GridTypeBeatDiv4</li>
-<li class="const">Editing.GridTypeBeatDiv8</li>
-<li class="const">Editing.GridTypeBeatDiv16</li>
-<li class="const">Editing.GridTypeBeatDiv32</li>
-<li class="const">Editing.GridTypeBeatDiv3</li>
-<li class="const">Editing.GridTypeBeatDiv6</li>
-<li class="const">Editing.GridTypeBeatDiv12</li>
-<li class="const">Editing.GridTypeBeatDiv24</li>
-<li class="const">Editing.GridTypeBeatDiv5</li>
-<li class="const">Editing.GridTypeBeatDiv10</li>
-<li class="const">Editing.GridTypeBeatDiv20</li>
-<li class="const">Editing.GridTypeBeatDiv7</li>
-<li class="const">Editing.GridTypeBeatDiv14</li>
-<li class="const">Editing.GridTypeBeatDiv28</li>
-<li class="const">Editing.GridTypeTimecode</li>
-<li class="const">Editing.GridTypeMinSec</li>
-<li class="const">Editing.GridTypeCDFrame</li>
-</ul>
-<h3 id="Editing.SnapMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.SnapMode</h3>
-<ul class="enum">
-<li class="const">Editing.SnapOff</li>
-<li class="const">Editing.SnapNormal</li>
-<li class="const">Editing.SnapMagnetic</li>
-</ul>
-<h3 id="Editing.MouseMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.MouseMode</h3>
-<ul class="enum">
-<li class="const">Editing.MouseObject</li>
-<li class="const">Editing.MouseRange</li>
-<li class="const">Editing.MouseCut</li>
-<li class="const">Editing.MouseTimeFX</li>
-<li class="const">Editing.MouseAudition</li>
-<li class="const">Editing.MouseDraw</li>
-<li class="const">Editing.MouseContent</li>
-</ul>
-<h3 id="Editing.ZoomFocus" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ZoomFocus</h3>
-<ul class="enum">
-<li class="const">Editing.ZoomFocusLeft</li>
-<li class="const">Editing.ZoomFocusRight</li>
-<li class="const">Editing.ZoomFocusCenter</li>
-<li class="const">Editing.ZoomFocusPlayhead</li>
-<li class="const">Editing.ZoomFocusMouse</li>
-<li class="const">Editing.ZoomFocusEdit</li>
-</ul>
-<h3 id="Editing.DisplayControl" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.DisplayControl</h3>
-<ul class="enum">
-<li class="const">Editing.FollowPlayhead</li>
-<li class="const">Editing.ShowMeasures</li>
-<li class="const">Editing.ShowWaveforms</li>
-<li class="const">Editing.ShowWaveformsRecording</li>
-</ul>
-<h3 id="Editing.ImportMode" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportMode</h3>
-<ul class="enum">
-<li class="const">Editing.ImportAsRegion</li>
-<li class="const">Editing.ImportToTrack</li>
-<li class="const">Editing.ImportAsTrack</li>
-</ul>
-<h3 id="Editing.ImportPosition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportPosition</h3>
-<ul class="enum">
-<li class="const">Editing.ImportAtTimestamp</li>
-<li class="const">Editing.ImportAtEditPoint</li>
-<li class="const">Editing.ImportAtPlayhead</li>
-<li class="const">Editing.ImportAtStart</li>
-</ul>
-<h3 id="Editing.ImportDisposition" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;Editing.ImportDisposition</h3>
-<ul class="enum">
-<li class="const">Editing.ImportDistinctFiles</li>
-<li class="const">Editing.ImportMergeFiles</li>
-<li class="const">Editing.ImportSerializeFiles</li>
-<li class="const">Editing.ImportDistinctChannels</li>
-</ul>
-<h3 id="LuaSignal.LuaSignal" class="cls enum"><abbr title="Enum">&isin;</abbr>&nbsp;LuaSignal.LuaSignal</h3>
-<ul class="enum">
-<li class="const">LuaSignal.ConfigChanged</li>
-<li class="const">LuaSignal.EngineRunning</li>
-<li class="const">LuaSignal.EngineStopped</li>
-<li class="const">LuaSignal.EngineHalted</li>
-<li class="const">LuaSignal.EngineDeviceListChanged</li>
-<li class="const">LuaSignal.BufferSizeChanged</li>
-<li class="const">LuaSignal.SampleRateChanged</li>
-<li class="const">LuaSignal.FeedbackDetected</li>
-<li class="const">LuaSignal.SuccessfulGraphSort</li>
-<li class="const">LuaSignal.StartTimeChanged</li>
-<li class="const">LuaSignal.EndTimeChanged</li>
-<li class="const">LuaSignal.Exported</li>
-<li class="const">LuaSignal.Change</li>
-<li class="const">LuaSignal.SessionConfigChanged</li>
-<li class="const">LuaSignal.TransportStateChange</li>
-<li class="const">LuaSignal.DirtyChanged</li>
-<li class="const">LuaSignal.StateSaved</li>
-<li class="const">LuaSignal.Xrun</li>
-<li class="const">LuaSignal.TransportLooped</li>
-<li class="const">LuaSignal.SoloActive</li>
-<li class="const">LuaSignal.SoloChanged</li>
-<li class="const">LuaSignal.IsolatedChanged</li>
-<li class="const">LuaSignal.MonitorChanged</li>
-<li class="const">LuaSignal.RecordStateChanged</li>
-<li class="const">LuaSignal.RecordArmStateChanged</li>
-<li class="const">LuaSignal.AudioLoopLocationChanged</li>
-<li class="const">LuaSignal.AudioPunchLocationChanged</li>
-<li class="const">LuaSignal.LocationsModified</li>
-<li class="const">LuaSignal.AuditionActive</li>
-<li class="const">LuaSignal.BundleAddedOrRemoved</li>
-<li class="const">LuaSignal.PositionChanged</li>
-<li class="const">LuaSignal.Located</li>
-<li class="const">LuaSignal.RoutesReconnected</li>
-<li class="const">LuaSignal.RouteAdded</li>
-<li class="const">LuaSignal.RouteGroupPropertyChanged</li>
-<li class="const">LuaSignal.RouteAddedToRouteGroup</li>
-<li class="const">LuaSignal.RouteRemovedFromRouteGroup</li>
-<li class="const">LuaSignal.StepEditStatusChange</li>
-<li class="const">LuaSignal.RouteGroupAdded</li>
-<li class="const">LuaSignal.RouteGroupRemoved</li>
-<li class="const">LuaSignal.RouteGroupsReordered</li>
-<li class="const">LuaSignal.PluginListChanged</li>
-<li class="const">LuaSignal.PluginStatusChanged</li>
-<li class="const">LuaSignal.DiskOverrun</li>
-<li class="const">LuaSignal.DiskUnderrun</li>
-<li class="const">LuaSignal.RegionsPropertyChanged</li>
-<li class="const">LuaSignal.LuaTimerS</li>
-<li class="const">LuaSignal.LuaTimerDS</li>
-<li class="const">LuaSignal.SetSession</li>
-</ul>
-<h2 id="h_index" >Class Index</h2>
-<ul class="classindex">
-<li><a class="" href="#ARDOUR">ARDOUR</a></li>
-<li><a class="" href="#ARDOUR:Amp">ARDOUR:Amp</a></li>
-<li><a class="" href="#ARDOUR:AsyncMIDIPort">ARDOUR:AsyncMIDIPort</a></li>
-<li><a class="" href="#ARDOUR:AudioBackend">ARDOUR:AudioBackend</a></li>
-<li><a class="" href="#ARDOUR:AudioBackendInfo">ARDOUR:AudioBackendInfo</a></li>
-<li><a class="" href="#ARDOUR:AudioBuffer">ARDOUR:AudioBuffer</a></li>
-<li><a class="" href="#ARDOUR:AudioEngine">ARDOUR:AudioEngine</a></li>
-<li><a class="" href="#ARDOUR:AudioPlaylist">ARDOUR:AudioPlaylist</a></li>
-<li><a class="" href="#ARDOUR:AudioPort">ARDOUR:AudioPort</a></li>
-<li><a class="" href="#ARDOUR:AudioPortMeters">ARDOUR:AudioPortMeters</a></li>
-<li><a class="" href="#ARDOUR:AudioRange">ARDOUR:AudioRange</a></li>
-<li><a class="" href="#ARDOUR:AudioRangeList">ARDOUR:AudioRangeList</a></li>
-<li><a class="" href="#ARDOUR:AudioRegion">ARDOUR:AudioRegion</a></li>
-<li><a class="" href="#ARDOUR:AudioRom">ARDOUR:AudioRom</a></li>
-<li><a class="" href="#ARDOUR:AudioSource">ARDOUR:AudioSource</a></li>
-<li><a class="" href="#ARDOUR:AudioTrack">ARDOUR:AudioTrack</a></li>
-<li><a class="" href="#ARDOUR:AudioTrackList">ARDOUR:AudioTrackList</a></li>
-<li><a class="" href="#ARDOUR:Automatable">ARDOUR:Automatable</a></li>
-<li><a class="" href="#ARDOUR:AutomatableSequence">ARDOUR:AutomatableSequence</a></li>
-<li><a class="" href="#ARDOUR:AutomationControl">ARDOUR:AutomationControl</a></li>
-<li><a class="" href="#ARDOUR:AutomationList">ARDOUR:AutomationList</a></li>
-<li><a class="" href="#ARDOUR:BackendVector">ARDOUR:BackendVector</a></li>
-<li><a class="" href="#ARDOUR:BeatsSamplesConverter">ARDOUR:BeatsSamplesConverter</a></li>
-<li><a class="" href="#ARDOUR:BufferSet">ARDOUR:BufferSet</a></li>
-<li><a class="" href="#ARDOUR:Bundle">ARDOUR:Bundle</a></li>
-<li><a class="" href="#ARDOUR:BundleListPtr">ARDOUR:BundleListPtr</a></li>
-<li><a class="" href="#ARDOUR:ChanCount">ARDOUR:ChanCount</a></li>
-<li><a class="" href="#ARDOUR:ChanMapping">ARDOUR:ChanMapping</a></li>
-<li><a class="" href="#ARDOUR:ControlList">ARDOUR:ControlList</a></li>
-<li><a class="" href="#ARDOUR:ControlListPtr">ARDOUR:ControlListPtr</a></li>
-<li><a class="" href="#ARDOUR:DSP">ARDOUR.DSP</a></li>
-<li><a class="" href="#ARDOUR:DSP:Biquad">ARDOUR:DSP:Biquad</a></li>
-<li><a class="" href="#ARDOUR:DSP:Convolution">ARDOUR:DSP:Convolution</a></li>
-<li><a class="" href="#ARDOUR:DSP:Convolver">ARDOUR:DSP:Convolver</a></li>
-<li><a class="" href="#ARDOUR:DSP:DspShm">ARDOUR:DSP:DspShm</a></li>
-<li><a class="" href="#ARDOUR:DSP:FFTSpectrum">ARDOUR:DSP:FFTSpectrum</a></li>
-<li><a class="" href="#ARDOUR:DSP:Generator">ARDOUR:DSP:Generator</a></li>
-<li><a class="" href="#ARDOUR:DSP:IRSettings">ARDOUR:DSP:IRSettings</a></li>
-<li><a class="" href="#ARDOUR:DSP:LTCReader">ARDOUR:DSP:LTCReader</a></li>
-<li><a class="" href="#ARDOUR:DSP:LowPass">ARDOUR:DSP:LowPass</a></li>
-<li><a class="" href="#ARDOUR:DataType">ARDOUR:DataType</a></li>
-<li><a class="" href="#ARDOUR:DelayLine">ARDOUR:DelayLine</a></li>
-<li><a class="" href="#ARDOUR:Delivery">ARDOUR:Delivery</a></li>
-<li><a class="" href="#ARDOUR:DeviceStatus">ARDOUR:DeviceStatus</a></li>
-<li><a class="" href="#ARDOUR:DeviceStatusVector">ARDOUR:DeviceStatusVector</a></li>
-<li><a class="" href="#ARDOUR:DiskIOProcessor">ARDOUR:DiskIOProcessor</a></li>
-<li><a class="" href="#ARDOUR:DiskReader">ARDOUR:DiskReader</a></li>
-<li><a class="" href="#ARDOUR:DiskWriter">ARDOUR:DiskWriter</a></li>
-<li><a class="" href="#ARDOUR:DoubleBeatsSamplesConverter">ARDOUR:DoubleBeatsSamplesConverter</a></li>
-<li><a class="" href="#ARDOUR:EventList">ARDOUR:EventList</a></li>
-<li><a class="" href="#ARDOUR:FileSource">ARDOUR:FileSource</a></li>
-<li><a class="" href="#ARDOUR:FluidSynth">ARDOUR:FluidSynth</a></li>
-<li><a class="" href="#ARDOUR:GainControl">ARDOUR:GainControl</a></li>
-<li><a class="" href="#ARDOUR:IO">ARDOUR:IO</a></li>
-<li><a class="" href="#ARDOUR:IOProcessor">ARDOUR:IOProcessor</a></li>
-<li><a class="" href="#ARDOUR:InterThreadInfo">ARDOUR:InterThreadInfo</a></li>
-<li><a class="" href="#ARDOUR:InternalReturn">ARDOUR:InternalReturn</a></li>
-<li><a class="" href="#ARDOUR:InternalSend">ARDOUR:InternalSend</a></li>
-<li><a class="" href="#ARDOUR:LatencyRange">ARDOUR:LatencyRange</a></li>
-<li><a class="" href="#ARDOUR:Latent">ARDOUR:Latent</a></li>
-<li><a class="" href="#ARDOUR:Location">ARDOUR:Location</a></li>
-<li><a class="" href="#ARDOUR:LocationList">ARDOUR:LocationList</a></li>
-<li><a class="" href="#ARDOUR:Locations">ARDOUR:Locations</a></li>
-<li><a class="" href="#ARDOUR:LuaAPI">ARDOUR.LuaAPI</a></li>
-<li><a class="" href="#ARDOUR:LuaAPI:Rubberband">ARDOUR:LuaAPI:Rubberband</a></li>
-<li><a class="" href="#ARDOUR:LuaAPI:Vamp">ARDOUR:LuaAPI:Vamp</a></li>
-<li><a class="" href="#ARDOUR:LuaOSC:Address">ARDOUR:LuaOSC:Address</a></li>
-<li><a class="" href="#ARDOUR:LuaProc">ARDOUR:LuaProc</a></li>
-<li><a class="" href="#ARDOUR:LuaTableRef">ARDOUR:LuaTableRef</a></li>
-<li><a class="" href="#ARDOUR:MIDIPortMeters">ARDOUR:MIDIPortMeters</a></li>
-<li><a class="" href="#ARDOUR:Meter">ARDOUR:Meter</a></li>
-<li><a class="" href="#ARDOUR:MeterSection">ARDOUR:MeterSection</a></li>
-<li><a class="" href="#ARDOUR:MetricSection">ARDOUR:MetricSection</a></li>
-<li><a class="" href="#ARDOUR:MidiBuffer">ARDOUR:MidiBuffer</a></li>
-<li><a class="" href="#ARDOUR:MidiModel">ARDOUR:MidiModel</a></li>
-<li><a class="" href="#ARDOUR:MidiModel:DiffCommand">ARDOUR:MidiModel:DiffCommand</a></li>
-<li><a class="" href="#ARDOUR:MidiModel:NoteDiffCommand">ARDOUR:MidiModel:NoteDiffCommand</a></li>
-<li><a class="" href="#ARDOUR:MidiPlaylist">ARDOUR:MidiPlaylist</a></li>
-<li><a class="" href="#ARDOUR:MidiPort">ARDOUR:MidiPort</a></li>
-<li><a class="" href="#ARDOUR:MidiRegion">ARDOUR:MidiRegion</a></li>
-<li><a class="" href="#ARDOUR:MidiSource">ARDOUR:MidiSource</a></li>
-<li><a class="" href="#ARDOUR:MidiTrack">ARDOUR:MidiTrack</a></li>
-<li><a class="" href="#ARDOUR:MidiTrackList">ARDOUR:MidiTrackList</a></li>
-<li><a class="" href="#ARDOUR:MonitorControl">ARDOUR:MonitorControl</a></li>
-<li><a class="" href="#ARDOUR:MonitorProcessor">ARDOUR:MonitorProcessor</a></li>
-<li><a class="" href="#ARDOUR:MusicSample">ARDOUR:MusicSample</a></li>
-<li><a class="" href="#ARDOUR:MuteControl">ARDOUR:MuteControl</a></li>
-<li><a class="" href="#ARDOUR:NotePtrList">ARDOUR:NotePtrList</a></li>
-<li><a class="" href="#ARDOUR:OwnedPropertyList">ARDOUR:OwnedPropertyList</a></li>
-<li><a class="" href="#ARDOUR:PDC">ARDOUR:PDC</a></li>
-<li><a class="" href="#ARDOUR:PannerShell">ARDOUR:PannerShell</a></li>
-<li><a class="" href="#ARDOUR:ParameterDescriptor">ARDOUR:ParameterDescriptor</a></li>
-<li><a class="" href="#ARDOUR:ParameterList">ARDOUR:ParameterList</a></li>
-<li><a class="" href="#ARDOUR:PeakMeter">ARDOUR:PeakMeter</a></li>
-<li><a class="" href="#ARDOUR:PhaseControl">ARDOUR:PhaseControl</a></li>
-<li><a class="" href="#ARDOUR:Playlist">ARDOUR:Playlist</a></li>
-<li><a class="" href="#ARDOUR:PlaylistList">ARDOUR:PlaylistList</a></li>
-<li><a class="" href="#ARDOUR:Plugin">ARDOUR:Plugin</a></li>
-<li><a class="" href="#ARDOUR:Plugin:IOPortDescription">ARDOUR:Plugin:IOPortDescription</a></li>
-<li><a class="" href="#ARDOUR:PluginControl">ARDOUR:PluginControl</a></li>
-<li><a class="" href="#ARDOUR:PluginInfo">ARDOUR:PluginInfo</a></li>
-<li><a class="" href="#ARDOUR:PluginInfoList">ARDOUR:PluginInfoList</a></li>
-<li><a class="" href="#ARDOUR:PluginInsert">ARDOUR:PluginInsert</a></li>
-<li><a class="" href="#ARDOUR:PluginType">ARDOUR.PluginType</a></li>
-<li><a class="" href="#ARDOUR:PolarityProcessor">ARDOUR:PolarityProcessor</a></li>
-<li><a class="" href="#ARDOUR:Port">ARDOUR:Port</a></li>
-<li><a class="" href="#ARDOUR:PortEngine">ARDOUR:PortEngine</a></li>
-<li><a class="" href="#ARDOUR:PortList">ARDOUR:PortList</a></li>
-<li><a class="" href="#ARDOUR:PortManager">ARDOUR:PortManager</a></li>
-<li><a class="" href="#ARDOUR:PortSet">ARDOUR:PortSet</a></li>
-<li><a class="" href="#ARDOUR:PresentationInfo">ARDOUR:PresentationInfo</a></li>
-<li><a class="" href="#ARDOUR:PresetRecord">ARDOUR:PresetRecord</a></li>
-<li><a class="" href="#ARDOUR:PresetVector">ARDOUR:PresetVector</a></li>
-<li><a class="" href="#ARDOUR:Processor">ARDOUR:Processor</a></li>
-<li><a class="" href="#ARDOUR:ProcessorList">ARDOUR:ProcessorList</a></li>
-<li><a class="" href="#ARDOUR:ProcessorVector">ARDOUR:ProcessorVector</a></li>
-<li><a class="" href="#ARDOUR:Progress">ARDOUR:Progress</a></li>
-<li><a class="" href="#ARDOUR:Properties:BoolProperty">ARDOUR:Properties:BoolProperty</a></li>
-<li><a class="" href="#ARDOUR:Properties:FloatProperty">ARDOUR:Properties:FloatProperty</a></li>
-<li><a class="" href="#ARDOUR:Properties:SampleposProperty">ARDOUR:Properties:SampleposProperty</a></li>
-<li><a class="" href="#ARDOUR:PropertyChange">ARDOUR:PropertyChange</a></li>
-<li><a class="" href="#ARDOUR:PropertyList">ARDOUR:PropertyList</a></li>
-<li><a class="" href="#ARDOUR:RCConfiguration">ARDOUR:RCConfiguration</a></li>
-<li><a class="" href="#ARDOUR:RawMidiParser">ARDOUR:RawMidiParser</a></li>
-<li><a class="" href="#ARDOUR:ReadOnlyControl">ARDOUR:ReadOnlyControl</a></li>
-<li><a class="" href="#ARDOUR:Readable">ARDOUR:Readable</a></li>
-<li><a class="" href="#ARDOUR:ReadableList">ARDOUR:ReadableList</a></li>
-<li><a class="" href="#ARDOUR:Region">ARDOUR:Region</a></li>
-<li><a class="" href="#ARDOUR:RegionFactory">ARDOUR:RegionFactory</a></li>
-<li><a class="" href="#ARDOUR:RegionList">ARDOUR:RegionList</a></li>
-<li><a class="" href="#ARDOUR:RegionListPtr">ARDOUR:RegionListPtr</a></li>
-<li><a class="" href="#ARDOUR:RegionMap">ARDOUR:RegionMap</a></li>
-<li><a class="" href="#ARDOUR:RegionVector">ARDOUR:RegionVector</a></li>
-<li><a class="" href="#ARDOUR:Return">ARDOUR:Return</a></li>
-<li><a class="" href="#ARDOUR:Route">ARDOUR:Route</a></li>
-<li><a class="" href="#ARDOUR:Route:ProcessorStreams">ARDOUR:Route:ProcessorStreams</a></li>
-<li><a class="" href="#ARDOUR:RouteGroup">ARDOUR:RouteGroup</a></li>
-<li><a class="" href="#ARDOUR:RouteGroupList">ARDOUR:RouteGroupList</a></li>
-<li><a class="" href="#ARDOUR:RouteList">ARDOUR:RouteList</a></li>
-<li><a class="" href="#ARDOUR:RouteListPtr">ARDOUR:RouteListPtr</a></li>
-<li><a class="" href="#ARDOUR:Send">ARDOUR:Send</a></li>
-<li><a class="" href="#ARDOUR:Session">ARDOUR:Session</a></li>
-<li><a class="" href="#ARDOUR:SessionConfiguration">ARDOUR:SessionConfiguration</a></li>
-<li><a class="" href="#ARDOUR:SessionObject">ARDOUR:SessionObject</a></li>
-<li><a class="" href="#ARDOUR:SessionObjectPtr">ARDOUR:SessionObjectPtr</a></li>
-<li><a class="" href="#ARDOUR:SessionPlaylists">ARDOUR:SessionPlaylists</a></li>
-<li><a class="" href="#ARDOUR:SideChain">ARDOUR:SideChain</a></li>
-<li><a class="" href="#ARDOUR:Slavable">ARDOUR:Slavable</a></li>
-<li><a class="" href="#ARDOUR:SlavableAutomationControl">ARDOUR:SlavableAutomationControl</a></li>
-<li><a class="" href="#ARDOUR:SoloControl">ARDOUR:SoloControl</a></li>
-<li><a class="" href="#ARDOUR:SoloIsolateControl">ARDOUR:SoloIsolateControl</a></li>
-<li><a class="" href="#ARDOUR:SoloSafeControl">ARDOUR:SoloSafeControl</a></li>
-<li><a class="" href="#ARDOUR:Source">ARDOUR:Source</a></li>
-<li><a class="" href="#ARDOUR:SourceList">ARDOUR:SourceList</a></li>
-<li><a class="" href="#ARDOUR:Stripable">ARDOUR:Stripable</a></li>
-<li><a class="" href="#ARDOUR:StripableList">ARDOUR:StripableList</a></li>
-<li><a class="" href="#ARDOUR:Tempo">ARDOUR:Tempo</a></li>
-<li><a class="" href="#ARDOUR:TempoMap">ARDOUR:TempoMap</a></li>
-<li><a class="" href="#ARDOUR:TempoSection">ARDOUR:TempoSection</a></li>
-<li><a class="" href="#ARDOUR:Track">ARDOUR:Track</a></li>
-<li><a class="" href="#ARDOUR:UnknownProcessor">ARDOUR:UnknownProcessor</a></li>
-<li><a class="" href="#ARDOUR:UserBundle">ARDOUR:UserBundle</a></li>
-<li><a class="" href="#ARDOUR:VCA">ARDOUR:VCA</a></li>
-<li><a class="" href="#ARDOUR:VCAList">ARDOUR:VCAList</a></li>
-<li><a class="" href="#ARDOUR:VCAManager">ARDOUR:VCAManager</a></li>
-<li><a class="" href="#ARDOUR:VCAVector">ARDOUR:VCAVector</a></li>
-<li><a class="" href="#ARDOUR:WeakAudioSourceList">ARDOUR:WeakAudioSourceList</a></li>
-<li><a class="" href="#ARDOUR:WeakRouteList">ARDOUR:WeakRouteList</a></li>
-<li><a class="" href="#ARDOUR:WeakSourceList">ARDOUR:WeakSourceList</a></li>
-<li><a class="" href="#ARDOUR:XrunPositions">ARDOUR:XrunPositions</a></li>
-<li><a class="" href="#ArdourUI">ArdourUI</a></li>
-<li><a class="" href="#ArdourUI:ArdourMarker">ArdourUI:ArdourMarker</a></li>
-<li><a class="" href="#ArdourUI:ArdourMarkerList">ArdourUI:ArdourMarkerList</a></li>
-<li><a class="" href="#ArdourUI:AxisView">ArdourUI:AxisView</a></li>
-<li><a class="" href="#ArdourUI:Editor">ArdourUI:Editor</a></li>
-<li><a class="" href="#ArdourUI:MarkerSelection">ArdourUI:MarkerSelection</a></li>
-<li><a class="" href="#ArdourUI:RegionSelection">ArdourUI:RegionSelection</a></li>
-<li><a class="" href="#ArdourUI:RegionView">ArdourUI:RegionView</a></li>
-<li><a class="" href="#ArdourUI:RouteTimeAxisView">ArdourUI:RouteTimeAxisView</a></li>
-<li><a class="" href="#ArdourUI:RouteUI">ArdourUI:RouteUI</a></li>
-<li><a class="" href="#ArdourUI:Selectable">ArdourUI:Selectable</a></li>
-<li><a class="" href="#ArdourUI:Selection">ArdourUI:Selection</a></li>
-<li><a class="" href="#ArdourUI:SelectionList">ArdourUI:SelectionList</a></li>
-<li><a class="" href="#ArdourUI:StripableTimeAxisView">ArdourUI:StripableTimeAxisView</a></li>
-<li><a class="" href="#ArdourUI:TimeAxisView">ArdourUI:TimeAxisView</a></li>
-<li><a class="" href="#ArdourUI:TimeAxisViewItem">ArdourUI:TimeAxisViewItem</a></li>
-<li><a class="" href="#ArdourUI:TimeSelection">ArdourUI:TimeSelection</a></li>
-<li><a class="" href="#ArdourUI:TrackSelection">ArdourUI:TrackSelection</a></li>
-<li><a class="" href="#ArdourUI:TrackViewList">ArdourUI:TrackViewList</a></li>
-<li><a class="" href="#ArdourUI:TrackViewStdList">ArdourUI:TrackViewStdList</a></li>
-<li><a class="" href="#ArdourUI:UIConfiguration">ArdourUI:UIConfiguration</a></li>
-<li><a class="" href="#C:ByteArray">C:ByteArray</a></li>
-<li><a class="" href="#C:ByteVector">C:ByteVector</a></li>
-<li><a class="" href="#C:DoubleArray">C:DoubleArray</a></li>
-<li><a class="" href="#C:DoubleVector">C:DoubleVector</a></li>
-<li><a class="" href="#C:FloatArray">C:FloatArray</a></li>
-<li><a class="" href="#C:FloatArrayVector">C:FloatArrayVector</a></li>
-<li><a class="" href="#C:FloatVector">C:FloatVector</a></li>
-<li><a class="" href="#C:Int64List">C:Int64List</a></li>
-<li><a class="" href="#C:IntArray">C:IntArray</a></li>
-<li><a class="" href="#C:StringList">C:StringList</a></li>
-<li><a class="" href="#C:StringVector">C:StringVector</a></li>
-<li><a class="" href="#Cairo:Context">Cairo:Context</a></li>
-<li><a class="" href="#Cairo:ImageSurface">Cairo:ImageSurface</a></li>
-<li><a class="" href="#Cairo:PangoLayout">Cairo:PangoLayout</a></li>
-<li><a class="" href="#Evoral:Beats">Evoral:Beats</a></li>
-<li><a class="" href="#Evoral:Control">Evoral:Control</a></li>
-<li><a class="" href="#Evoral:ControlEvent">Evoral:ControlEvent</a></li>
-<li><a class="" href="#Evoral:ControlList">Evoral:ControlList</a></li>
-<li><a class="" href="#Evoral:ControlSet">Evoral:ControlSet</a></li>
-<li><a class="" href="#Evoral:Event">Evoral:Event</a></li>
-<li><a class="" href="#Evoral:NotePtr">Evoral:NotePtr</a></li>
-<li><a class="" href="#Evoral:Parameter">Evoral:Parameter</a></li>
-<li><a class="" href="#Evoral:ParameterDescriptor">Evoral:ParameterDescriptor</a></li>
-<li><a class="" href="#Evoral:Range">Evoral:Range</a></li>
-<li><a class="" href="#Evoral:Sequence">Evoral:Sequence</a></li>
-<li><a class="" href="#LuaDialog:Dialog">LuaDialog:Dialog</a></li>
-<li><a class="" href="#LuaDialog:Message">LuaDialog:Message</a></li>
-<li><a class="" href="#LuaDialog:ProgressWindow">LuaDialog:ProgressWindow</a></li>
-<li><a class="" href="#LuaSignal:Set">LuaSignal:Set</a></li>
-<li><a class="" href="#PBD">PBD</a></li>
-<li><a class="" href="#PBD:Command">PBD:Command</a></li>
-<li><a class="" href="#PBD:Configuration">PBD:Configuration</a></li>
-<li><a class="" href="#PBD:Controllable">PBD:Controllable</a></li>
-<li><a class="" href="#PBD:ID">PBD:ID</a></li>
-<li><a class="" href="#PBD:IdVector">PBD:IdVector</a></li>
-<li><a class="" href="#PBD:RingBuffer8">PBD:RingBuffer8</a></li>
-<li><a class="" href="#PBD:RingBufferF">PBD:RingBufferF</a></li>
-<li><a class="" href="#PBD:RingBufferI">PBD:RingBufferI</a></li>
-<li><a class="" href="#PBD:Stateful">PBD:Stateful</a></li>
-<li><a class="" href="#PBD:StatefulDestructible">PBD:StatefulDestructible</a></li>
-<li><a class="" href="#PBD:StatefulDestructiblePtr">PBD:StatefulDestructiblePtr</a></li>
-<li><a class="" href="#PBD:StatefulDiffCommand">PBD:StatefulDiffCommand</a></li>
-<li><a class="" href="#PBD:StatefulPtr">PBD:StatefulPtr</a></li>
-<li><a class="" href="#PBD:XMLNode">PBD:XMLNode</a></li>
-<li><a class="" href="#Timecode:BBT_TIME">Timecode:BBT_TIME</a></li>
-<li><a class="" href="#Timecode:Time">Timecode:Time</a></li>
-<li><a class="" href="#Vamp:Plugin">Vamp:Plugin</a></li>
-<li><a class="" href="#Vamp:Plugin:Feature">Vamp:Plugin:Feature</a></li>
-<li><a class="" href="#Vamp:Plugin:FeatureList">Vamp:Plugin:FeatureList</a></li>
-<li><a class="" href="#Vamp:Plugin:FeatureSet">Vamp:Plugin:FeatureSet</a></li>
-<li><a class="" href="#Vamp:Plugin:OutputDescriptor">Vamp:Plugin:OutputDescriptor</a></li>
-<li><a class="" href="#Vamp:Plugin:OutputList">Vamp:Plugin:OutputList</a></li>
-<li><a class="" href="#Vamp:PluginBase">Vamp:PluginBase</a></li>
-<li><a class="" href="#Vamp:PluginBase:ParameterDescriptor">Vamp:PluginBase:ParameterDescriptor</a></li>
-<li><a class="" href="#Vamp:PluginBase:ParameterList">Vamp:PluginBase:ParameterList</a></li>
-<li><a class="" href="#Vamp:RealTime">Vamp:RealTime</a></li>
-<li><a class="" href="#os">os</a></li>
-</ul>
+
 <!-- 605 / 4038 !-->
 </div>
 <div class="luafooter">Ardour 6.9 &nbsp;-&nbsp; Fri, 13 Aug 2021 15:53:36 +0200</div>
