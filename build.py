@@ -18,7 +18,6 @@ import argparse
 import datetime
 
 # Global vars
-global_bootstrap_path = 'bootstrap-3.3.7'
 global_page_title = 'The Ardour Manual'
 global_site_dir = './website/'
 global_manual_url = 'http://manual.ardour.org'
@@ -460,7 +459,6 @@ shutil.copytree('./source', global_site_dir)
 temp = open(global_screen_template)
 template = temp.read()
 temp.close()
-template = template.replace('{{page.bootstrap_path}}', global_bootstrap_path)
 template = template.replace('{{page.page_title}}', global_page_title)
 if pdf:
 	template = template.replace('{{page.page_pdflink}}', global_pdflink)
@@ -472,7 +470,6 @@ else:
 temp = open(global_onepage_template)
 onepage = temp.read()
 temp.close()
-onepage = onepage.replace('{{page.bootstrap_path}}', global_bootstrap_path)
 onepage = onepage.replace('{{page.page_title}}', global_page_title)
 
 if pdf:
